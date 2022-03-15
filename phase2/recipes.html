@@ -7,66 +7,94 @@
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css.css">
-        <title>Recipes Page</title>
-    </head>
+    <title>Recipes Page</title>
+</head>
 
-    <body class = "active">
-    <div class="wrapper">
-        <!--Menu Bar -->
-        <div class="sidebar">
-            <ul>
-                <li>
-                    <a href="home.html" class="active">
-                        <span class="icon"><i class="fas fa-home"></i></span>
-                        <span class="item">Home</span>
-                    </a>
-                </li>
+<body class = "active">
+<div class="wrapper">
+    <!--Menu Bar -->
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="home.html" class="active">
+                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <span class="item">Home</span>
+                </a>
+            </li>
 
-                <li>
-                    <a href="recipes.html" class="active">
-                        <span class="icon"><i class="fa-solid fa-book"></i></span>
-                        <span class="item">Recipes</span>
-                    </a>
-                </li>
-                <li>
-                    <!-- add correct filename to href below                   -->
-                    <a href="shoppingList.html" class="active">
-                        <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
-                        <span class="item">Shopping List</span>
-                    </a>
-                </li>
+            <li>
+                <a href="recipes.html" class="active">
+                    <span class="icon"><i class="fa-solid fa-book"></i></span>
+                    <span class="item">Recipes</span>
+                </a>
+            </li>
+            <li>
+                <!-- add correct filename to href below                   -->
+                <a href="shoppingList.html" class="active">
+                    <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                    <span class="item">Shopping List</span>
+                </a>
+            </li>
 
-                <li>
-                    <!-- add correct filename to href below                   -->
-                    <a href="inventory.html" class="active">
-                        <span class="icon"><i class="fa-solid fa-utensils"></i></span>
-                        <span class="item">Inventory</span>
-                    </a>
-                </li>
+            <li>
+                <!-- add correct filename to href below                   -->
+                <a href="inventory.html" class="active">
+                    <span class="icon"><i class="fa-solid fa-utensils"></i></span>
+                    <span class="item">Inventory</span>
+                </a>
+            </li>
 
-            </ul>
-        </div>
-        <div class="section">
-            <div class="top_navbar">
-                <div class="menuButton">
-                    <a href="#">
-                        <i class="fas fa-bars"></i>
-                    </a>
-                </div>
-                <!--Put title of page here!-->
-                <div class="title">
-                    Recipes
-                </div>
+        </ul>
+    </div>
+    <div class="section">
+        <div class="top_navbar">
+            <div class="menuButton">
+                <a href="#">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+            <!--Put title of page here!-->
+            <div class="title">
+                Recipes
             </div>
         </div>
     </div>
+</div>
 
-<!--    <div class="levelSelection">-->
-<!--        buttons or selector for levels of recipes here-->
-<!--        buttons or selector for filters-->
-<!--    </div>-->
+<div class="levelSelection">
+    Whats your level of cooking?
+    <!--        create js function to show recipe based on level-->
+    <select onclick="showRecipe();" class = "select" onchange="showRecipe();" name="levels" id="levelSelection">
+        <option value="easy" selected="true">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+</div>
+<div class="allergenForm">
+    <form>
+        <legend>Any food restrictions?</legend>
+        <div>
+            <!--                    need to make so that it can choose multiple options-->
+            <select id="preference" multiple required size=5>
+                <option value="Nuts">Nuts</option>
+                <option value="GlutenFree">Gluten Free</option>
+                <option value="Vegetarian">Vegetarian </option>
+                <option value="Vegan">Vegan</option>
+            </select>
+            <!--                    radio buttons or select?? -->
+            <!--                    <br>-->
+            <!--                    <input type="radio" id="ageTeen" name="ageGroup" value="teen" checked/> Teen &nbsp;-->
+            <!--                    <input type="radio" id="ageTwenties" name="ageGroup" value="twenties"/> 20-29 &nbsp;-->
+            <!--                    <input type="radio" id="ageThirties" name="ageGroup" value="thirties"/> 30-39 <br>-->
+        </div>
+
+        <button id="processButton">Submit Survey!</button>
+        <input type="reset">
+    </form>
+</div>
+<!--    show recipe button?-->
 <!--    <div class="recipeName">-->
-<!--        recipe name goes here-->
+<!--        recipe name/title goes here-->
 <!--    </div>-->
 <!--    <div class="recipeInfo">-->
 <!--        recipe info goes here (allergen information, time, level, etc)-->
@@ -83,11 +111,11 @@
 <!--    </div>-->
 
 
-    <script>
+<script>
           var menuButton = document.querySelector(".menuButton");
           menuButton.addEventListener("click", function(){
              document.querySelector("body").classList.toggle("active");
           });
     </script>
-    </body>
+</body>
 </html>
