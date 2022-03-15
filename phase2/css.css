@@ -1,11 +1,11 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500&display=swap');
    *{
     list-style: none;
     text-decoration: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     }
 
     body{
@@ -87,4 +87,9 @@
     body.active .wrapper .section{
         margin-left: 0;
         width: 100%;
+    }
+
+    .title{
+         margin: auto;
+         color: #f1faee;
     }
