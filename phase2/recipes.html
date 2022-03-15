@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/25e0395ca2.js" crossorigin="anonymous"></script>
+    <script src ="js.js">
+    </script>
     <!--feel free to change icons by browsing fontawesome above^^-->
 
     <meta charset="UTF-8">
@@ -10,7 +12,7 @@
     <title>Recipes Page</title>
 </head>
 
-<body class = "active">
+<body class = "active" onload="main()">
 <div class="wrapper">
     <!--Menu Bar -->
     <div class="sidebar">
@@ -110,12 +112,5 @@
 <!--        list of instructions go here-->
 <!--    </div>-->
 
-
-<script>
-          var menuButton = document.querySelector(".menuButton");
-          menuButton.addEventListener("click", function(){
-             document.querySelector("body").classList.toggle("active");
-          });
-    </script>
 </body>
 </html>
