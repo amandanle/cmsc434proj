@@ -79,6 +79,19 @@
         color: #457B9D;
     }
 
+    .button-container {
+        width: 100%;
+        overflow-y: auto;
+    }
+    
+    .button-container > a {
+        width: 100%;
+        height: 100px;
+        float: left;
+        background: lightgray;   
+        margin: 15px;
+    }
+
 
     body.active .wrapper .sidebar{
         left: -225px;
