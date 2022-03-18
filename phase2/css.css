@@ -79,6 +79,29 @@
         color: #457B9D;
     }
 
+    body.active .wrapper .sidebar{
+        left: -225px;
+    }
+
+    body.active .wrapper .section{
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .button {
+        border: none;
+        color: #497B9D;
+        padding: 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: 25px;
+      }
+
+    .button:hover {
+        background-color: #A8DADC;
+      }
+
     .button-container {
         width: 100%;
         overflow-y: auto;
@@ -90,16 +113,6 @@
         float: left;
         background: lightgray;   
         margin: 15px;
-    }
-
-
-    body.active .wrapper .sidebar{
-        left: -225px;
-    }
-
-    body.active .wrapper .section{
-        margin-left: 0;
-        width: 100%;
     }
 
     .title{
