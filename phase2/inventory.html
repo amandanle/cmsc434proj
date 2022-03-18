@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/25e0395ca2.js" crossorigin="anonymous"></script>
+    <script src ="js.js">
+    </script>
+    <!--feel free to change icons by browsing fontawesome above^^-->
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css.css">
+    <title>Inventory Page</title>
+</head>
+
+<body class = "active" onload="main()">
+<div class="wrapper">
+    <!--Menu Bar -->
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="home.html" class="active">
+                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <span class="item">Home</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="recipes.html" class="active">
+                    <span class="icon"><i class="fa-solid fa-book"></i></span>
+                    <span class="item">Recipes</span>
+                </a>
+            </li>
+            <li>
+                <!-- add correct filename to href below                   -->
+                <a href="shoppinglist.html" class="active">
+                    <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                    <span class="item">Shopping List</span>
+                </a>
+            </li>
+
+            <li>
+                <!-- add correct filename to href below                   -->
+                <a href="inventory.html" class="active">
+                    <span class="icon"><i class="fa-solid fa-utensils"></i></span>
+                    <span class="item">Inventory</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="section">
+        <div class="top_navbar">
+            <div class="menuButton">
+                <a href="#">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+            <!--Put title of page here!-->
+            <div class="title">
+                Inventory
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+    <!-- this is a dropdown menu for our inventory -->
+
+    <label for="inventory"> <h1> Check Inventory </h1> </label> <br>
+        <select name="inventory" id="inventory" onchange ="changeFunc();">
+            <option value = "Chicken Breast"> Chicken Breast </option>
+            <option value = "Banana"> Banana </option>
+            <option value = "Apple"> Apple </option>
+            <option value = "Green Pepper"> Green Pepper </option>
+            <option value = "Broccoli"> Broccoli </option>
+        </select>
+        <br><br><br><br>
+
+        <!-- this is a table showing some nutrition facts for our items -->
+
+        <style>
+            table, th, td {
+              border:1px solid black;
+            }
+            </style>
+        <table>
+            <tr>
+              <th>Food Item</th>
+              <th>Serving Size</th>
+              <th>Calories</th>
+              <th>Protein</th>
+              <th>Fat</th>
+            </tr>
+            <tr>
+              <td>Chicken Breast</td>
+              <td>140g</td>
+              <td>231</td>
+              <td>43g (86%)</td>
+              <td>5g (7%)</td>
+            </tr>
+            <tr>
+                <td>Banana</td>
+                <td>118g (medium sized)</td>
+                <td>105</td>
+                <td>1.3g (2%)</td>
+                <td>0.4g (0%)</td>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td>182g (medium sized)</td>
+                <td>95</td>
+                <td>0.5g (1%)</td>
+                <td>0.3g (0%)</td>
+              </tr>
+            <tr>
+                <td>Green Pepper</td>
+                <td>119g</td>
+                <td>24</td>
+                <td>1g (2%)</td>
+                <td>0.2g (0%)</td>
+              </tr>
+              <tr>
+                <td>Broccoli</td>
+                <td>91g  (1 cup)</td>
+                <td>31</td>
+                <td>2.5g (4%)</td>
+                <td>0.4g (0%)</td>
+              </tr>
+          </table>
+
+    <html>
+    <head>
+  <script type="text/javascript">
+
+  function changeFunc() {
+    var selectBox = document.getElementById("inventory");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    alert(selectedValue);
+   }
+
+
+  </script>
+  </head>
+  </html>
+
+
+    
