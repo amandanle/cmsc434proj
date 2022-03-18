@@ -38,5 +38,7 @@ function processRecipeData(){
     level = levelSelected.options[levelSelected.selectedIndex].text
     console.log(level);
     console.log(allergenInformation);
+    alert("your level chosen is " + level + " allergen information is " + allergenInformation);
+//    alert("your allergen information is " + allergenInformation);
 
 }
