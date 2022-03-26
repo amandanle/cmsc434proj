@@ -75,7 +75,7 @@
         color: #f1faee;
     }
 
-    .wrapper .section .top_navbar .menuButton a:hover{
+    .wrapper .section .top_navbar .menuButton {
         color: #457B9D;
     }
 

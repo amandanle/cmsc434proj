@@ -63,7 +63,7 @@
     </div>
 </div>
 
-<div class="levelSelection">
+<div class="levelSelection" >
     Whats your level of cooking?
     <!--        create js function to show recipe based on level-->
     <select onclick="showRecipe();" class = "select" onchange="showRecipe();" name="levels" id="levelSelection">
@@ -91,23 +91,30 @@
 <!--        <input type="reset">-->
     </form>
 </div>
+<div id="recipe">
+
+</div>
 <!--    show recipe button?-->
-<!--    <div class="recipeName">-->
+   <div id="recipeName">
 <!--        recipe name/title goes here-->
-<!--    </div>-->
-<!--    <div class="recipeInfo">-->
+   </div>
+   <div id="recipeInfo">
 <!--        recipe info goes here (allergen information, time, level, etc)-->
-<!--    </div>-->
-<!--    <div class="recipeImage">-->
+   </div>
+   <div id="recipeImage">
 <!--        image for recipe goes here-->
-<!--    </div>-->
-<!--    <div class="ingredients">-->
+   </div>
+   <div id="ingredients">
+       Ingredients:
+       <ol id = "ingredientsList"></ol>
 <!--        List of ingredients go here-->
 <!--        add options to add to shopping list as well-->
-<!--    </div>-->
-<!--    <div class="Instructions">-->
+   </div>
+   <div id="Instructions">
+       Instructions:
+    <ol id = "instructionsList"></ol>
 <!--        list of instructions go here-->
-<!--    </div>-->
+   </div>
 
 </body>
 </html>
