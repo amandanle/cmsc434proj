@@ -76,95 +76,45 @@
         "imageURL": "recipeImages/bananabread.webp"
     },
     {
-        "name": "Cereal",
+        "name": "Zucchini Noodles",
         "info": [
-            "easy",
+            "medium",
+            "nut-free",
+            "gluten-free",
             "vegetarian",
-            "gluten-free"
+            "vegan"
         ],
         "ingredients": [
             {
-                "quantity": "1 cup",
-                "name": "Cereal"
+                "quantity": "1",
+                "name": "zucchini"
             },
             {
-                "quantity": "2 cups ",
-                "name": "milk"
+                "quantity": "1 1/4 cup",
+                "name": "basil"
+            },{
+                "quantity": "1/3 cup",
+                "name": "water"
+            },
+            {
+                "quantity": "2 tablespoon",
+                "name": "lemon juice"
+            },
+            {
+                "quantity": "1",
+                "name": "avocado"
+            },
+            {
+                "quantity": "12",
+                "name": "cherry tomatoes"
             }
         ],
         "steps": [
-            "Put cereal of choosing into bowl",
-            "Pour milk in and enjoy"
+            "Make zucchini noodles with peeler or spiralizer",
+            "Blend all of the ingredients (except zucchini and cherry tomatoes) together",
+            "Slice the cherry tomatoes",
+            "Mix the avocado sauce with the tomatoes and noodles and enjoy"
         ],
-        "imageURL": "cereal.jpeg"
-    },
-    {
-        "name": "Cereal",
-        "info": [
-            "easy",
-            "vegetarian",
-            "gluten-free"
-        ],
-        "ingredients": [
-            {
-                "quantity": "1 cup",
-                "name": "Cereal"
-            },
-            {
-                "quantity": "2 cups ",
-                "name": "milk"
-            }
-        ],
-        "steps": [
-            "Put cereal of choosing into bowl",
-            "Pour milk in and enjoy"
-        ],
-        "imageURL": "cereal.jpeg"
-    },
-    {
-        "name": "Cereal",
-        "info": [
-            "easy",
-            "vegetarian",
-            "gluten-free"
-        ],
-        "ingredients": [
-            {
-                "quantity": "1 cup",
-                "name": "Cereal"
-            },
-            {
-                "quantity": "2 cups ",
-                "name": "milk"
-            }
-        ],
-        "steps": [
-            "Put cereal of choosing into bowl",
-            "Pour milk in and enjoy"
-        ],
-        "imageURL": "cereal.jpeg"
-    },
-    {
-        "name": "Cereal",
-        "info": [
-            "easy",
-            "vegetarian",
-            "gluten-free"
-        ],
-        "ingredients": [
-            {
-                "quantity": "1 cup",
-                "name": "Cereal"
-            },
-            {
-                "quantity": "2 cups ",
-                "name": "milk"
-            }
-        ],
-        "steps": [
-            "Put cereal of choosing into bowl",
-            "Pour milk in and enjoy"
-        ],
-        "imageURL": "cereal.jpeg"
+        "imageURL": "recipeImages/zucnoodles.webp"
     }
 ]
