@@ -9,7 +9,7 @@
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css.css">
-    <title>Recipes Page</title>
+    <title>Tutorial Page</title>
 </head>
 
 <body class = "active" onload="main()">
@@ -57,64 +57,89 @@
             </div>
             <!--Put title of page here!-->
             <div class="title">
-                Recipes
+                How To Use Your Kitchen Kompanion
             </div>
         </div>
     </div>
 </div>
-
-<div class="levelSelection" >
-    Whats your level of cooking?
-    <!--        create js function to show recipe based on level-->
-    <select onclick="showRecipe();" class = "select" onchange="showRecipe();" name="levels" id="levelSelection">
-        <option value="easy" selected="true">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
-    </select>
-</div>
-<div class="allergenForm">
-    <form>
-        <legend>Any food restrictions?</legend>
-        <div>
-            <select id="preference" multiple required size=5>
-                <option value="Nuts">Nuts</option>
-                <option value="GlutenFree">Gluten Free</option>
-                <option value="Vegetarian">Vegetarian </option>
-                <option value="Vegan">Vegan</option>
-                <option value="None">None</option>
-            </select>
-            <!--radio buttons or select?? -->
-        </div>
-
-        <button id="processRecipeButton">Give me a recipe!</button>
-<!--        do we need a reset button...?-->
-<!--        <input type="reset">-->
-    </form>
-</div>
-<div id="recipe">
-
-</div>
-<!--    show recipe button?-->
-   <div id="recipeName">
-<!--        recipe name/title goes here-->
-   </div>
-   <div id="recipeInfo">
-<!--        recipe info goes here (allergen information, time, level, etc)-->
-   </div>
-   <div id="recipeImage">
-<!--        image for recipe goes here-->
-   </div>
-   <div id="ingredients">
-       Ingredients:
-       <ol id = "ingredientsList"></ol>
-<!--        List of ingredients go here-->
-<!--        add options to add to shopping list as well-->
-   </div>
-   <div id="Instructions">
-       Instructions:
-    <ol id = "instructionsList"></ol>
-<!--        list of instructions go here-->
-   </div>
-
 </body>
 </html>
+
+<div id="main">
+    <br></br>
+    <h1>Kitchen Kompanion: How To Use</h1>
+    <br></br>
+
+    <h2>Recipes</h2>
+    <table border=1 frame=box>
+        <tr>
+            <td>
+              Browsing Recipes
+            </td>
+  
+            <td>
+              To browse our delicious collection of recipes...
+            </td>
+          </tr>
+        
+        <tr>
+          <td>
+            Favoriting Recipes
+          </td>
+
+          <td>
+            Find a recipe you like? You can favorite it and save it for later by...
+          </td>
+        </tr>
+      </table>
+    
+    <br></br>
+    <h2>Shopping Lists</h2>
+    <table border=1 frame=box>
+        <tr>
+            <td>
+              How To Create a New Shopping List
+            </td>
+  
+            <td>
+              To create a new shopping list...
+            </td>
+          </tr>
+        
+        <tr>
+          <td>
+            Save It For Later: Storing Your Shopping List
+          </td>
+
+          <td>
+            With the Kitchen Kompanion App, you can maintain
+            a live inventory of the items in your pantry
+            and kitchen.
+          </td>
+        </tr>
+      </table>
+
+    <br></br>
+    <h2>Inventory</h2>
+    <table border=1 frame=box>
+        <tr>
+          <td>
+            Classify Your Inventory By Location
+          </td>
+
+          <td>
+            With the Kitchen Kompanion App, you can maintain
+            a live inventory of the items in your pantry
+            and kitchen.
+          </td>
+        </tr>
+      </table>
+
+    <footer id="foot01"></footer>
+  </div>
+   
+  </head>
+  </html>
+
+
+    
