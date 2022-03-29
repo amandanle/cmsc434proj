@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/25e0395ca2.js" crossorigin="anonymous"></script>
+    <script src ="js.js">
+    </script>
+    <!--feel free to change icons by browsing fontawesome above^^-->
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css.css">
+    <title>Shopping List Page</title>
+    </head>
+
+    <body class = "active" onload="main()">
+        <div class="wrapper">
+            <!--Menu Bar -->
+            <div class="sidebar">
+                <ul>
+                    <li>
+                        <a href="home.html" class="active">
+                            <span class="icon"><i class="fas fa-home"></i></span>
+                            <span class="item">Home</span>
+                        </a>
+                    </li>
+        
+                    <li>
+                        <a href="recipes.html" class="active">
+                            <span class="icon"><i class="fa-solid fa-book"></i></span>
+                            <span class="item">Recipes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- add correct filename to href below                   -->
+                        <a href="shoppinglist.html" class="active">
+                            <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                            <span class="item">Shopping List</span>
+                        </a>
+                    </li>
+        
+                    <li>
+                        <!-- add correct filename to href below                   -->
+                        <a href="inventory.html" class="active">
+                            <span class="icon"><i class="fa-solid fa-utensils"></i></span>
+                            <span class="item">Inventory</span>
+                        </a>
+                    </li>
+        
+                </ul>
+            </div>
+            <div class="section">
+                <div class="top_navbar">
+                    <div class="menuButton">
+                        <a href="#">
+                            <i class="fas fa-bars"></i>
+                        </a>
+                    </div>
+                    <!--Put title of page here!-->
+                    <div class="title">
+                        Shopping List
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="levelSelection">
+            <!--        create js function to show recipe based on level-->
+            <!-- <select onclick="showRecipe();" class = "select" onchange="showRecipe();" name="levels" id="levelSelection">
+                <option value="easy" selected="true">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select> -->
+
+
+
+            <!-- <button type="button" onclick=test()>Add New</button> -->
+        </div>
+        <div class="addingitem">
+                
+
+                <p id="newItemLabel">Add a New Item:</p>
+        <form>
+            <input type="text" name="itemName" id="itemName" value="Item Name"/>
+            <input type="text" name="itemAmount" id="itemAmount" value="Item Amount"/>
+            <select>
+                <option value="Other">General Store</option>
+                <option value="Trader Joe's">Trader Joe's</option>
+                <option value="Whole Foods">Whole Foods</option>
+                <option value="Aldi">Aldi</option>
+                <option value="Walmart">Walmart</option>
+                
+
+                <!-- <option value="Other">Other</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Grains">Grains</option>
+                <option value="Canned Goods">Canned Goods</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Beverages">Beverages</option>
+                <option value="Meat">Meat</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Frozen">Frozen</option>
+                <option value="Household">Household</option> -->
+            </select> 
+            <input type="button" value="add" id="addButton" onClick="" name="add"/>
+        </form> <br>
+
+        Trader Joe's
+                <div>
+                        <input type="checkbox" name="fruit" value="Apple"> 1 Apple <br>
+                        <input type="checkbox" name="fruit" value="Orange"> 3 Orange <br>
+                        <input type="checkbox" name="fruit" value="Banana"> 5 Pasta Sauce <br>
+
+                </div><br>
+
+       Whole Foods
+                <div>
+                        <input type="checkbox" name="fruit" value="Apple"> 1 Sourdough Bread <br>
+                        <input type="checkbox" name="fruit" value="Orange"> 1 Eggs <br>
+                        <input type="checkbox" name="fruit" value="Banana"> 2 Almond Milk <br>
+
+                </div>
+
+    </body>
+</html>
