@@ -13,23 +13,23 @@ let level = new String();
 //let recipesJson = '[{ "name": "Cereal", "info": ["easy", "vegetarian", "gluten-free"], "ingredients":[{"quantity": "2 cups","name": " cereal"},{"quantity": "2 cups","name": "milk"} ],"steps": ["Put cereal of choosing into bowl.","pour milk in bowl and enjoy."],"imageURL": "cereal.jpeg"},{ "name": "Cereal","ingredients": [{"quantity": "1","name": " beef roast", "type": "Meat"}]} ]';
 //for the json data to be read in 
 
-// let recipes;
-// fetch("./recipe.json").then(
-//         function(u){ return u.json();}
-//       ).then(
-//         function(json){
-//           recipes = json;
-//         }
-//       )
+ let recipes;
+ fetch("./recipe.json").then(
+         function(u){ return u.json();}
+       ).then(
+         function(json){
+           recipes = json;
+         }
+       )
 
 function main(){
 
     // for the menu button to open and close
-    var menuButton = document.querySelector(".menuButton");
-    menuButton.addEventListener("click", function(){ document.querySelector("body").classList.toggle("active");});
+//    var menuButton = document.querySelector(".menuButton");
+//    menuButton.addEventListener("click", function(){ document.querySelector("body").classList.toggle("active");});
 
     // for the recipe form
-    //document.getElementById("processRecipeButton").onclick = processRecipeData;
+    document.getElementById("processRecipeButton").onclick = processRecipeData;
 
 }
 
@@ -78,41 +78,64 @@ function showRecipe(){
     let list = document.getElementById("ingredientsList");
     var ing = recipe.ingredients;
     ing.forEach((item)=>{
-        let li = document.createElement("li");
-        li.innerText = item.name;
-        var checkBox = document.createElement('input');
-        checkBox.type = "checkbox";
-        li.appendChild(checkBox);
+//        let li = document.createElement("li");
+//        li.innerText = item.name;
+//        var checkBox = document.createElement('input');
+//        checkBox.type = "checkbox";
+//        li.appendChild(checkBox);
+//
+//        var button = document.createElement("button");
+//        button.innerHTML = "add to shopping list";
+//        button.addEventListener("click",  function() {addToShoppingList(item.name)});
+//        console.log(shoppingList);
+//        li.appendChild(button);
+//        list.appendChild(li);
 
-        var button = document.createElement("button");
-        button.innerHTML = "add to shopping list";
-        button.addEventListener("click",  function() {addToShoppingList(item.name)});
-        console.log(shoppingList);
-        li.appendChild(button);
-        list.appendChild(li);
+        var newCheckbox = document.createElement("input");
+        newCheckbox.type = "checkbox";
+        //newCheckbox.innerText = item;
+        list.appendChild(newCheckbox);
+        list.innerHTML += item.name;
+        list.appendChild(document.createElement("br"));
       })
+
+      var button = document.createElement("button");
+      button.innerHTML = "add to shopping list";
+      button.addEventListener("click",  function() {addToShoppingList(ing)});
+      //console.log(shoppingList);
+      list.appendChild(button);
+
 
     var divInstructions = document.getElementById("instructionsList");
     var instructs = recipe.steps;
     instructs.forEach((item)=>{
-        let li = document.createElement("li");
-        li.innerText = item;
-        var checkBox = document.createElement('input');
-        checkBox.type = "checkbox";
-        li.appendChild(checkBox);
-        list.appendChild(li);
+//        let li = document.createElement("li");
+//        li.innerText = item;
+//        var checkBox = document.createElement('input');
+//        checkBox.type = "checkbox";
+//        li.appendChild(checkBox);
+//        list.appendChild(li);
+        var newCheckbox = document.createElement("input");
+        newCheckbox.type = "checkbox";
+        //newCheckbox.innerText = item;
+        divInstructions.appendChild(newCheckbox);
+        divInstructions.innerHTML += item;
+        divInstructions.appendChild(document.createElement("br"));
       })
+
 }
 
 //function to add the item to shoppingList
 function addToShoppingList(item){
     shoppingList.push(item);
+    alert("Added to Shopping List!");
     //console.log(shoppingList);
 }
 
 //function to add item to inventory
 function addToInventory(item){
     inventory.push(item);
+    alert("Added to Inventory!");
 }
 
 function addToList(item){
