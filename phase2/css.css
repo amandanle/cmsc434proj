@@ -132,3 +132,7 @@
          margin: auto;
          color: #f1faee;
     }
+
+    input[type=checkbox]:checked + label.strikethrough{
+        text-decoration: line-through;
+      }

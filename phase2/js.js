@@ -114,3 +114,14 @@ function addToShoppingList(item){
 function addToInventory(item){
     inventory.push(item);
 }
+
+function addToList(item){
+    var item = document.getElementById("itemName");
+    var amount = document.getElementById("itemAmount");
+    var divTraderJoesList = document.getElementById("TraderJoesList");
+    
+    var store = document.getElementById("storeSelection");
+    divTraderJoesList.innerHTML += amount;
+    divTraderJoesList.innerHTML += item;
+    alert(item);
+}

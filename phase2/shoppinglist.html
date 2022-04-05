@@ -82,7 +82,7 @@
         <form>
             <input type="text" name="itemName" id="itemName" value="Item Name"/>
             <input type="text" name="itemAmount" id="itemAmount" value="Item Amount"/>
-            <select>
+            <select id = "storeSelection">
                 <option value="Other">General Store</option>
                 <option value="Trader Joe's">Trader Joe's</option>
                 <option value="Whole Foods">Whole Foods</option>
@@ -102,22 +102,24 @@
                 <option value="Frozen">Frozen</option>
                 <option value="Household">Household</option> -->
             </select> 
-            <input type="button" value="add" id="addButton" onClick="" name="add"/>
+            <input type="button" value="add" id="addButton" onClick="addToList()" name="add"/>
         </form> <br>
 
         Trader Joe's
-                <div>
-                        <input type="checkbox" name="fruit" value="Apple"> 1 Apple <br>
-                        <input type="checkbox" name="fruit" value="Orange"> 3 Orange <br>
-                        <input type="checkbox" name="fruit" value="Banana"> 5 Pasta Sauce <br>
+                <div id="TraderJoesList">
+                    
+                    
+                        <input type="checkbox" name="food" value="Apple"> <label for="food" class="strikethrough">1 Apple</label>  <br>
+                        <input type="checkbox" name="food" value="Orange"><label for="food" class="strikethrough">3 Orange</label> <br>
+                        <input type="checkbox" name="food" value="Banana"> <label for="food" class="strikethrough">5 Pasta Sauce</label> <br>
 
                 </div><br>
 
        Whole Foods
                 <div>
-                        <input type="checkbox" name="fruit" value="Apple"> 1 Sourdough Bread <br>
-                        <input type="checkbox" name="fruit" value="Orange"> 1 Eggs <br>
-                        <input type="checkbox" name="fruit" value="Banana"> 2 Almond Milk <br>
+                        <input type="checkbox" name="food" value="Apple"><label for="food" class="strikethrough">1 Sourdough Bread</label>  <br>
+                        <input type="checkbox" name="food" value="Orange"> <label for="food" class="strikethrough">1 Eggs</label> <br>
+                        <input type="checkbox" name="food" value="Banana"> <label for="food" class="strikethrough">2 Almond Milk</label> <br>
 
                 </div>
 
