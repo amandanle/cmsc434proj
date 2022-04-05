@@ -10,6 +10,8 @@ let allergenInformation = new Array();
 // level of recipes
 let level = new String();
 
+let pinned = new Array();
+
 //let recipesJson = '[{ "name": "Cereal", "info": ["easy", "vegetarian", "gluten-free"], "ingredients":[{"quantity": "2 cups","name": " cereal"},{"quantity": "2 cups","name": "milk"} ],"steps": ["Put cereal of choosing into bowl.","pour milk in bowl and enjoy."],"imageURL": "cereal.jpeg"},{ "name": "Cereal","ingredients": [{"quantity": "1","name": " beef roast", "type": "Meat"}]} ]';
 //for the json data to be read in 
 
@@ -62,6 +64,11 @@ function showRecipe(){
     //display found recipe
     var divName =  document.getElementById("recipeName");
     divName.innerHTML = recipe.name;
+    divName.appendChild(document.createElement("br"));
+    var saveButton = document.createElement("button");
+    saveButton.innerHTML = "save to pinned";
+    saveButton.addEventListener("click",  function() {addToPinned(recipe.name)});
+    divName.appendChild(saveButton);
 
     var divInfo = document.getElementById("recipeInfo");
     var info = recipe.info;
@@ -135,6 +142,11 @@ function addToShoppingList(item){
     shoppingList.push(item);
     alert("Added to Shopping List!");
     //console.log(shoppingList);
+}
+
+function addToPinned(item){
+    pinned.push(item);
+    alert("Added to Pinned Recipes!");
 }
 
 //function to add item to inventory
