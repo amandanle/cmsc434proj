@@ -125,11 +125,8 @@ function addToList(item){
     var store = document.getElementById("storeSelection");
     var newCheckbox = document.createElement("input");
     newCheckbox.type = "checkbox";
-    newCheckbox.innerHTML = amount;
-    newCheckbox.innerHTML += ' '; 
-    newCheckbox.innerHTML += item;
     divTraderJoesList.appendChild(newCheckbox);
-    divTraderJoesList.innerHTML += amount;
+    divTraderJoesList.innerHTML += " " + amount + " ";
     divTraderJoesList.innerHTML += item;
-    alert(item);
+    divTraderJoesList.appendChild(document.createElement("br"));
 }
