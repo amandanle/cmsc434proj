@@ -137,6 +137,65 @@ function showRecipe(){
 
 }
 
+//function to show last saved recipe
+function showARecipe(){
+    recipe = recipes[1];
+
+    //display saved recipe
+    var divName =  document.getElementById("recipeName");
+    divName.innerHTML = recipe.name;
+    divName.appendChild(document.createElement("br"));
+    var saveButton = document.createElement("button");
+    saveButton.innerHTML = "save to pinned";
+    saveButton.addEventListener("click",  function() {addToPinned(recipe.name)});
+    divName.appendChild(saveButton);
+
+    var divInfo = document.getElementById("recipeInfo");
+    var info = recipe.info;
+    for (var i = 0; i < info.length; i++) {
+        divInfo.innerHTML += info[i];
+        divInfo.innerHTML += ' ';
+    }
+
+    var divImg = document.getElementById("recipeImage");
+    img = document.createElement("img");
+    img.src = recipe.imageURL;
+    divImg.appendChild(img);
+
+    let list = document.getElementById("ingredientsList");
+    list.innerHTML = "Ingredients:";
+    list.appendChild(document.createElement("br"));
+    var ing = recipe.ingredients;
+    ing.forEach((item)=>{
+
+        var newCheckbox = document.createElement("input");
+        newCheckbox.type = "checkbox";
+        list.appendChild(newCheckbox);
+        list.innerHTML  += " " + item.quantity + " ";
+        list.innerHTML += item.name;
+        list.appendChild(document.createElement("br"));
+      })
+
+      var button = document.createElement("button");
+      button.innerHTML = "add to shopping list";
+      button.addEventListener("click",  function() {addToShoppingList(ing)});
+      list.appendChild(button);
+
+
+    var divInstructions = document.getElementById("instructionsList");
+    divInstructions.innerHTML = "Instructions:";
+    divInstructions.appendChild(document.createElement("br"));
+    var instructs = recipe.steps;
+    instructs.forEach((item)=>{
+        var newCheckbox = document.createElement("input");
+        newCheckbox.type = "checkbox";
+        divInstructions.appendChild(newCheckbox);
+        divInstructions.innerHTML += item;
+        divInstructions.appendChild(document.createElement("br"));
+      })
+
+}
+
 //function to add the item to shoppingList
 function addToShoppingList(item){
     shoppingList.push(item);
