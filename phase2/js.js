@@ -76,6 +76,8 @@ function showRecipe(){
     divImg.appendChild(img);
 
     let list = document.getElementById("ingredientsList");
+    list.innerHTML = "Ingredients:";
+    list.appendChild(document.createElement("br"));
     var ing = recipe.ingredients;
     ing.forEach((item)=>{
 //        let li = document.createElement("li");
@@ -108,6 +110,8 @@ function showRecipe(){
 
 
     var divInstructions = document.getElementById("instructionsList");
+    divInstructions.innerHTML = "Instructions:";
+    divInstructions.appendChild(document.createElement("br"));
     var instructs = recipe.steps;
     instructs.forEach((item)=>{
 //        let li = document.createElement("li");
