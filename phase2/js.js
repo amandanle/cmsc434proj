@@ -13,14 +13,14 @@ let level = new String();
 //let recipesJson = '[{ "name": "Cereal", "info": ["easy", "vegetarian", "gluten-free"], "ingredients":[{"quantity": "2 cups","name": " cereal"},{"quantity": "2 cups","name": "milk"} ],"steps": ["Put cereal of choosing into bowl.","pour milk in bowl and enjoy."],"imageURL": "cereal.jpeg"},{ "name": "Cereal","ingredients": [{"quantity": "1","name": " beef roast", "type": "Meat"}]} ]';
 //for the json data to be read in 
 
-let recipes;
-fetch("./recipe.json").then(
-        function(u){ return u.json();}
-      ).then(
-        function(json){
-          recipes = json;
-        }
-      )
+// let recipes;
+// fetch("./recipe.json").then(
+//         function(u){ return u.json();}
+//       ).then(
+//         function(json){
+//           recipes = json;
+//         }
+//       )
 
 function main(){
 
@@ -29,7 +29,7 @@ function main(){
     menuButton.addEventListener("click", function(){ document.querySelector("body").classList.toggle("active");});
 
     // for the recipe form
-    document.getElementById("processRecipeButton").onclick = processRecipeData;
+    //document.getElementById("processRecipeButton").onclick = processRecipeData;
 
 }
 
@@ -116,11 +116,19 @@ function addToInventory(item){
 }
 
 function addToList(item){
-    var item = document.getElementById("itemName");
-    var amount = document.getElementById("itemAmount");
+    var item = document.getElementById("itemName").value;
+    console.log(item);
+    var amount = document.getElementById("itemAmount").value;
+    console.log(amount);
     var divTraderJoesList = document.getElementById("TraderJoesList");
     
     var store = document.getElementById("storeSelection");
+    var newCheckbox = document.createElement("input");
+    newCheckbox.type = "checkbox";
+    newCheckbox.innerHTML = amount;
+    newCheckbox.innerHTML += ' '; 
+    newCheckbox.innerHTML += item;
+    divTraderJoesList.appendChild(newCheckbox);
     divTraderJoesList.innerHTML += amount;
     divTraderJoesList.innerHTML += item;
     alert(item);
