@@ -95,6 +95,7 @@ function showRecipe(){
         newCheckbox.type = "checkbox";
         //newCheckbox.innerText = item;
         list.appendChild(newCheckbox);
+        list.innerHTML  += " " + item.quantity + " ";
         list.innerHTML += item.name;
         list.appendChild(document.createElement("br"));
       })
