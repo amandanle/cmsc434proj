@@ -7,11 +7,17 @@
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
     margin: auto;
+    //font-size: 6vw;
     //text-align: center;
     }
 
     body{
         background: #f1faee;
+        font-size: 6vw;
+    }
+
+    input, select, textarea, button {
+        font-size: 5vw;
     }
 
     .wrapper .sidebar{
@@ -65,7 +71,7 @@
 
     .wrapper .section .top_navbar{
         background: #457B9D;
-        height: 50px;
+        height: 90px;
         display: flex;
         align-items: center;
         padding: 0 30px;
@@ -184,6 +190,7 @@
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1faee;
+    font-size: 4vw;
   }
   .tab button {
     background-color: #f1faee;
@@ -194,17 +201,26 @@
     padding: 14px 16px;
     transition: 0.3s;
     position: static;
+    font-size: 4vw;
 
   }
   .tab button:hover {
     background-color: #A8DADC;
+    font-size: 4vw;
   }
   .tab button.active {
     background-color: #lightgray;
+    font-size: 4vw;
   }
   .tabcontent {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    font-size: 4vw;
+  }
+
+  .tablinks {
+    font-size: 4vw;
+
   }
