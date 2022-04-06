@@ -2,11 +2,11 @@
     {
         "name": "Cereal",
         "info": [
-            "easy",
-            "nut-free",
-            "gluten-free",
-            "vegetarian",
-            "vegan"
+            " easy ",
+            "| nut-free ",
+            "| gluten-free ",
+            "| vegetarian ",
+            "| vegan |"
         ],
         "ingredients": [
             {

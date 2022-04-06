@@ -31,7 +31,7 @@
 </div>
 
 <div class="levelSelection" >
-    Whats your level of cooking?
+    <p id="levelQuestion">Whats your level of cooking? </p>
     <!--        create js function to show recipe based on level-->
     <select onclick="showRecipe();" class = "select" onchange="showRecipe();" name="levels" id="levelSelection">
         <option value="easy" selected="true">Easy</option>
@@ -40,7 +40,7 @@
     </select>
 </div>
 <div class="allergenForm">
-    <form>
+    <form id="allergyForm">
         <legend>Any food restrictions?</legend>
         <div>
             <select id="preference" multiple required size=5>
@@ -63,18 +63,23 @@
    <div id="recipeName">
 <!--        recipe name/title goes here-->
    </div>
+
+
    <div id="recipeInfo">
 <!--        recipe info goes here (allergen information, time, level, etc)-->
    </div>
+<br>
    <div id="recipeImage">
 <!--        image for recipe goes here-->
    </div>
+<br>
    <div id="ingredients">
 <!--       Ingredients:-->
        <ol id = "ingredientsList"></ol>
 <!--        List of ingredients go here-->
 <!--        add options to add to shopping list as well-->
    </div>
+<br>
    <div id="Instructions">
 <!--       Instructions:-->
     <ol id = "instructionsList"></ol>

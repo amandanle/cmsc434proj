@@ -16,8 +16,41 @@
         font-size: 6vw;
     }
 
-    input, select, textarea, button {
+    input, select, textarea, button{
         font-size: 5vw;
+    }
+
+    h1{
+
+        text-align:center;
+    }
+    h6{
+
+            text-align:center;
+        }
+
+    img{
+        border-radius: 10%;
+        display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
+    }
+
+
+    input[type=checkbox]{
+      transform: scale(5);
+      display: inline;
+      margin-left:100px;
+      margin-right:50px;
+
+
+    }
+
+    .checkboxtext{
+      //padding:50px;
+      display: inline;
+
     }
 
     .wrapper .sidebar{
@@ -223,4 +256,8 @@
   .tablinks {
     font-size: 4vw;
 
+  }
+
+  #recipeName{
+    text-align:center;
   }
