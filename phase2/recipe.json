@@ -2,11 +2,11 @@
     {
         "name": "Cereal",
         "info": [
-            "easy",
-            "nut-free",
-            "gluten-free",
-            "vegetarian",
-            "vegan"
+            " easy ",
+            "| nut-free ",
+            "| gluten-free ",
+            "| vegetarian ",
+            "| vegan |"
         ],
         "ingredients": [
             {
@@ -28,7 +28,7 @@
         "name": "Banana Bread",
         "info": [
             "easy",
-            "vegetarian",
+            " | vegetarian | ",
             "vegan"
         ],
         "ingredients": [
@@ -74,97 +74,5 @@
             "Pour batter into pan and bake for 50 minutes. Let cool before serving"
         ],
         "imageURL": "recipeImages/bananabread.webp"
-    },
-    {
-        "name": "Cereal",
-        "info": [
-            "easy",
-            "vegetarian",
-            "gluten-free"
-        ],
-        "ingredients": [
-            {
-                "quantity": "1 cup",
-                "name": "Cereal"
-            },
-            {
-                "quantity": "2 cups ",
-                "name": "milk"
-            }
-        ],
-        "steps": [
-            "Put cereal of choosing into bowl",
-            "Pour milk in and enjoy"
-        ],
-        "imageURL": "cereal.jpeg"
-    },
-    {
-        "name": "Cereal",
-        "info": [
-            "easy",
-            "vegetarian",
-            "gluten-free"
-        ],
-        "ingredients": [
-            {
-                "quantity": "1 cup",
-                "name": "Cereal"
-            },
-            {
-                "quantity": "2 cups ",
-                "name": "milk"
-            }
-        ],
-        "steps": [
-            "Put cereal of choosing into bowl",
-            "Pour milk in and enjoy"
-        ],
-        "imageURL": "cereal.jpeg"
-    },
-    {
-        "name": "Cereal",
-        "info": [
-            "easy",
-            "vegetarian",
-            "gluten-free"
-        ],
-        "ingredients": [
-            {
-                "quantity": "1 cup",
-                "name": "Cereal"
-            },
-            {
-                "quantity": "2 cups ",
-                "name": "milk"
-            }
-        ],
-        "steps": [
-            "Put cereal of choosing into bowl",
-            "Pour milk in and enjoy"
-        ],
-        "imageURL": "cereal.jpeg"
-    },
-    {
-        "name": "Cereal",
-        "info": [
-            "easy",
-            "vegetarian",
-            "gluten-free"
-        ],
-        "ingredients": [
-            {
-                "quantity": "1 cup",
-                "name": "Cereal"
-            },
-            {
-                "quantity": "2 cups ",
-                "name": "milk"
-            }
-        ],
-        "steps": [
-            "Put cereal of choosing into bowl",
-            "Pour milk in and enjoy"
-        ],
-        "imageURL": "cereal.jpeg"
     }
 ]
