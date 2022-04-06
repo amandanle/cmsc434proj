@@ -5,16 +5,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<meta charset="UTF-8">
+<link rel="stylesheet" href="css.css">
 <script src="https://kit.fontawesome.com/25e0395ca2.js" crossorigin="anonymous"></script>
 <script src ="js.js">
 </script>
 <!--feel free to change icons by browsing fontawesome above^^-->
 
-<meta charset="UTF-8">
-<link rel="stylesheet" href="css.css">
 <title>Home Page</title>
 <style>
 html, body, h1, h2, h3, h4, h5 
@@ -26,19 +23,39 @@ html, body, h1, h2, h3, h4, h5
 <div class="wrapper">
 <!--    tabs!!-->
 </div>
-
 <!-- Start of Page Container -->
 <div class="page-container">
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <a href="inventory.html">1 or more of your ingredients in your inventory are expiring soon! 
+          Click here to see which ones.</a>
+    </div>
+    <br></br>
   <!-- Start of Profile Container -->
   <div class="profile-container">
-    <h1>My Profile</h1>
+    <h6>My Profile</h6>
     <!-- Profile Pic -->
-      <div class="user one">
-        
-        </div>
-
+      <div class="user one"></div>
+      <h5><b>Angelica Day</b></h5>
+      <li>Dietary Restriction(s): Nut Allergy</li>
+      <li>Favorite Recipe: Cereal and Milk</li>
+      <hr></hr>
+      <!-- Profile Tabs -->
+      <div class="tab">
+      <button class="tablinks" > 
+        <a href="pinned.html" > 
+          <span class="icon"><i class="fa-solid fa-thumbtack"></i></span>
+          <span class="item">Pinned Recipe</span>
+        </a></button>
+      <button class="tablinks" > 
+        <a href="comingsoon.html" > 
+          <span class="icon"><i class="fa-solid fa-pencil"></i></span>
+          <span class="item">Edit Profile</span>
+        </a></button>
+      </div>
     <!-- End of Profile Container -->
     </div>   
+    <br></br>
 
     <div class="menu-container">
     <div class="button-container">
@@ -80,127 +97,3 @@ html, body, h1, h2, h3, h4, h5
 </div>
 
 
-<!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1280px;margin-top:80px">    
-  <!-- The Grid -->
-  <div class="w3-row">
-    <!-- Left Column -->
-    <div class="w3-col m3">
-      <!-- Profile -->
-      <div class="w3-card w3-round w3-white">
-        <div class="w3-container">
-         <h4 class="w3-center">My Profile</h4>
-         <p class="w3-center"><img src="/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
-         <hr>
-         <p><i class="fa fa-pencil fa-fw w3-margin-right"></i> Designer, UI</p>
-         <p><i class="fa fa-home fa-fw w3-margin-right"></i> London, UK</p>
-         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right"></i> April 1, 1988</p>
-        </div>
-      </div>
-      <br>
-      
-      <!-- Accordion -->
-      <div class="w3-card w3-round">
-        <div class="w3-white">
-          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
-          <div id="Demo1" class="w3-hide w3-container">
-            <p>Some text..</p>
-          </div>
-          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
-          <div id="Demo2" class="w3-hide w3-container">
-            <p>Some other text..</p>
-          </div>
-          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
-          <div id="Demo3" class="w3-hide w3-container">
-         <div class="w3-row-padding">
-         <br>
-           <div class="w3-half">
-             <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/snow.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-         </div>
-          </div>
-        </div>      
-      </div>
-      <br>
-      
-      <!-- Interests --> 
-      <div class="w3-card w3-round w3-white w3-hide-small">
-        <div class="w3-container">
-          <p>My Dietary Preferences and Favorites</p>
-          <p>
-            <span class="w3-tag w3-small w3-theme-d5">Vegan</span>
-            <span class="w3-tag w3-small w3-theme-d4">Gluten Free</span>
-            <span class="w3-tag w3-small w3-theme-d3">Tofu</span>
-            <span class="w3-tag w3-small w3-theme-d2">Quinoa</span>
-            <span class="w3-tag w3-small w3-theme-d1">Brown Rice</span>
-          </p>
-        </div>
-      </div>
-      <br>
-      
-      <!-- Alert Box -->
-      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
-        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
-          <i class="fa fa-remove"></i>
-        </span>
-        <p><strong>Uh Oh!</strong></p>
-        <p>Some items in your inventory are expiring. Find out which ones!</p>
-      </div>
-    
-    <!-- End Left Column -->
-    </div>
-    
-  <!-- End Grid -->
-  </div>
-  
-<!-- End Page Container -->
-</div>
-<br>
-
-<!-- Footer -->
-<footer class="w3-container w3-theme-d3 w3-padding-16">
-  <h5>Footer</h5>
-</footer>
- 
-<script>
-// Accordion
-function myFunction(id) {
-  var x = document.getElementById(id);
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-theme-d1";
-  } else { 
-    x.className = x.className.replace("w3-show", "");
-    x.previousElementSibling.className = 
-    x.previousElementSibling.className.replace(" w3-theme-d1", "");
-  }
-}
-
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
-
-</body>
-</html> 
