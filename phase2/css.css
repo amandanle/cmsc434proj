@@ -7,8 +7,6 @@
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
     margin: auto;
-    //font-size: 6vw;
-    //text-align: center;
     }
 
     body{
@@ -26,8 +24,8 @@
     }
     h6{
 
-            text-align:center;
-        }
+         text-align:center;
+    }
 
     img{
         border-radius: 10%;
@@ -48,8 +46,10 @@
     }
 
     .checkboxtext{
-      //padding:50px;
-      display: inline;
+        margin-left: 3em;
+        display: block;
+        position: relative;
+        margin-top: -1.4em;
 
     }
 

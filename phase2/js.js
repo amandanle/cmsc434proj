@@ -78,17 +78,14 @@ function showRecipe(num){
     var divInfo = document.getElementById("recipeInfo");
     heading = document.createElement("h6");
     var info = recipe.info;
-    //heading.innerHTML += ' | ';
     for (var i = 0; i < info.length; i++) {
         heading.innerHTML += info[i];
-        //heading.innerHTML += ' | ';
     }
     divInfo.appendChild(heading);
     
     var divImg = document.getElementById("recipeImage");
     img = document.createElement("img");
     img.src = recipe.imageURL;
-    //img.alt = recipe.name;
     img.width = "500";
     divImg.appendChild(img);
 
@@ -110,7 +107,6 @@ function showRecipe(num){
         span.innerHTML  += " " + item.quantity + " ";
         span.innerHTML += item.name;
         list.appendChild(span);
-        list.appendChild(document.createElement("br"));
       })
 
       var button = document.createElement("button");
@@ -125,14 +121,17 @@ function showRecipe(num){
     divInstructions.appendChild(heading);
     var instructs = recipe.steps;
     instructs.forEach((item)=>{
+
         var newCheckbox = document.createElement("input");
         newCheckbox.type = "checkbox";
         var span = document.createElement("span");
+        var para = document.createElement("p");
         span.classList.add('checkboxtext');
-        span.innerHTML += item;
+        para.innerHTML += item;
+        span.appendChild(para);
         divInstructions.appendChild(newCheckbox);
         divInstructions.appendChild(span);
-        divInstructions.appendChild(document.createElement("br"));
+
       })
 
     divInstructions.appendChild(document.createElement("br"));
