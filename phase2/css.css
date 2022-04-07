@@ -129,6 +129,13 @@
         width: 100%;
     }
 
+    .logo{
+      padding-top: 20px;
+      width:90%;
+      height:10px;
+      
+    }
+
     .page-container{
         background-color:#457B9D;
     }
@@ -138,9 +145,10 @@
         display: block;
         text-align: center;
         float:center;
-        padding: 10px;
+        padding-top: 5px;
         box-shadow: 0 3px 3px rgba(0,0,0,0.2);
         background-color: #f1faee;
+        font-size: 14px;
        
     }
 
@@ -180,10 +188,11 @@
 
      
     .alert {
-        padding: 20px;
-        background-color: #e63946; /* Red */
+        padding: 15px;
+        background-color: #e63946;
         color: white;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
+        font-size: 15px;
     }
     
     /* The close button */
@@ -225,13 +234,11 @@
       }
 
     .button-container {
-        width: 100%;
         overflow-y: auto;
     }
     
     .button-container > a {
         position: relative;
-        width: 100%;
         height: 100px; 
         margin: 15px;
         display: inline-block;
@@ -240,7 +247,9 @@
     .action-container {
         float: auto;
         margin-bottom: 5px;
+        width:80%;
         background: #f1faee;  
+        box-shadow: 0 3px 3px rgba(0,0,0,0.2);
     }
 
     .title{
