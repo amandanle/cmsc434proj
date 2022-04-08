@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/25e0395ca2.js" crossorigin="anonymous"></script>
     <script src ="js.js">
@@ -10,33 +9,31 @@
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="inventory.css">
-    <title>Inventory Page</title>
+    <title>Inventory</title>
 </head>
 
 <body class = "active" onload="main()">
 <div class="wrapper">
-
+<!--    tabs!!-->
     <div class="tab">
-      <button class="tablinks" > <a href="home.html" > Home </a></button>
-      <button class="tablinks" > <a href="recipes.html" > Search Recipes </a></button>
-      <button class="tablinks" > <a href="shoppingList.html" > Shopping List </a></button>
-      <button class="tablinks" > <a href="inventory.html" > Inventory </a></button>
+        <button class="tablinks" > <a href="home.html" > Home </a></button>
+        <button class="tablinks" > <a href="recipes.html" > Search Recipes </a></button>
+        <button class="tablinks" > <a href="shoppingList.html" > Shopping List </a></button>
+        <button class="tablinks" > <a href="inventory.html" > Inventory </a></button>
     </div>
     <div class="section">
         <div class="top_navbar">
-            <!--Put title of page here!-->
             <div class="title">
                 Inventory
             </div>
         </div>
     </div>
 </div>
-</body>
-</html>
 
-<div class="show">
-  <span onclick="addItem()" id="addBtn" class="addBtn">Add</span>
+<div id = "empty-list">
+    Your Inventory is Empty, click the Add Item button to add an item to your inventory.
 </div>
+
 
 
 <div class="hide" id="addItem">
@@ -83,23 +80,89 @@
   </tr>
   <tr> 
     <td> <span onclick="closeAdding()" class="closeBtn">Close</span> </td>
-    <td> <span onclick="newItem()" class="finishBtn">Finish</span></td>
+    <td> <span onclick="newItem()" class="finishBtn">Add</span></td>
   </tr>
   </table>
 </div>
 <!-- ITEM INFO -->
 
 
-
 <ol id="foodItems">
-`       <li>Food: Canned Beans Quantity: 12 cans Expiration Date: 04/21/2025</li>
+
 </ol>
 
+<div>
+  <span onclick="addItem()" id="addBtn" class="addBtn">Add Item</span>
+</div>
 
+
+
+        <div class='hide' id='itemInfo'> 
+        <table> 
+          <tr>
+            <td> <label for="food-input">Item Name: </label></td>
+            <td> <span id='item-name-info'> </span> </td> 
+          </tr> 
+          <tr>
+            <td> <label for="food-input">Purchased: </label></td>
+            <td> <span id='purchased-date-info'> </span> </td> 
+          </tr> 
+          <tr>
+            <td> <label for="food-input">Quantity: </label></td>
+            <td><span id='amount'> </span>
+            </td> 
+          </tr> 
+          <tr>
+            <td> <label for="food-input">Best By: </label></td>
+            <td><span id='item-expir-date-info'> </span> </td> 
+          </tr> 
+          <tr> 
+            <td><span class="editBtn" onClick="editButtonAlert()">Edit</span></td>
+            <td padding="100px"> <span onclick="closeInfo()" class="closeBtn">Close</span> </td>
+          </tr>
+        </table>
+        </div>
 
 
 <!-- FUNCTIONS  -->
 <script type="text/javascript">
+
+
+
+function closeInfo(){
+          var x = document.getElementById("itemInfo");
+          x.style.display = "none";
+
+          var y = document.getElementById("addBtn");
+          y.style.display = "block";
+        }
+
+
+
+        var list = document.querySelector('ol');
+        list.addEventListener('click', function(ev) {
+        if (ev.target.tagName === 'LI') {
+          var x = document.getElementById("addBtn");
+          x.style.display = "none";
+
+
+
+          var itemName = ev.target.innerHTML;
+          itemName = itemName.split("<")[0];
+          var currInfo = foodItems.get(itemName);
+          document.getElementById('item-name-info').innerText = itemName;
+          document.getElementById('purchased-date-info').innerText = currInfo[0];
+          document.getElementById('amount').innerText = currInfo[1];
+          if (currInfo[2] != "") {
+          var year = currInfo[2].split("-")[0];
+          var month = currInfo[2].split("-")[1];
+          var day = currInfo[2].split("-")[2];
+          document.getElementById('item-expir-date-info').innerText = month + "-" + day + "-" + year;
+          }
+          
+          document.getElementById('itemInfo').style.display="block";
+        }
+        }, false);
 
 
   function hideAdd() {
@@ -132,7 +195,8 @@
     var i;
     for (i = 0; i < close.length; i++) {
       close[i].onclick = function() {
-
+        var x = document.getElementById("itemInfo");
+            x.style.display = "none";
       var div = this.parentElement;
       div.style.display = "none";
     }
@@ -144,6 +208,8 @@ function addItem(){
     var x = document.getElementById("addItem");
     if (x.style.display === "none") {
       var hide = document.getElementById("foodItems");
+      hide.style.display = "none";
+      hide = document.getElementById("empty-list");
       hide.style.display = "none";
       document.getElementById('addBtn').style.display='none';
       x.style.display = "block";
@@ -179,11 +245,8 @@ function addItem(){
     var currInfo = [purDate, quantity, expirDate];
     foodItems.set(inputValue, currInfo);
     /* Adding a new item to the list */
-    var t = document.createTextNode("Food: " + inputValue + " Quantity: " + quantity + " Expiration Date: " + expirDate);
+    var t = document.createTextNode(inputValue);
     li.appendChild(t);
-    if (expirDate === '') {
-      document.getElementById("expir-date").value = "None";
-    }
     if (inputValue === '' || quantity === '') {
     alert("You must write something!");
     x.style.display = "block";
