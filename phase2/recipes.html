@@ -34,31 +34,37 @@
     </div>
 </div>
 
-<div class="levelSelection" >
+<div class="levelSelection" style="line-height: 1.5; text-align:center;">
     <p id="levelQuestion">Whats your level of cooking? </p>
     <!--        create js function to show recipe based on level-->
-    <select onclick="showRecipe();" class = "select" onchange="showRecipe();" name="levels" id="levelSelection">
-        <option value="easy" selected="true">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
-    </select>
+    <center>
+        <select  class = "select"  name="levels" id="levelSelection" style="width:300px; text-align:center;">
+            <option value="easy" selected="true">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </center>
 </div>
-<div class="allergenForm">
-    <form id="allergyForm">
+<div class="allergenForm" style="line-height: 1.5;text-align:center;">
+    <center>
+        <form id="allergyForm">
         <legend>Any food restrictions?</legend>
-        <div>
-            <select id="preference" multiple required size=5>
-                <option value="Nuts">Nuts</option>
-                <option value="GlutenFree">Gluten Free</option>
-                <option value="Vegetarian">Vegetarian </option>
-                <option value="Vegan">Vegan</option>
-                <option value="None">None</option>
-            </select>
-            <!--radio buttons or select?? -->
-        </div>
+
+            <div>
+                <select id="preference" multiple required size=5 style="width:300px; text-align:center;">
+                    <option value="Nuts">Nuts</option>
+                    <option value="GlutenFree">Gluten Free</option>
+                    <option value="Vegetarian">Vegetarian </option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="None">None</option>
+                </select>
+                <!--radio buttons or select?? -->
+            </div>
 
         <button id="processRecipeButton">Give me a recipe!</button>
+
     </form>
+    </center>
 </div>
 <div id="recipe">
 

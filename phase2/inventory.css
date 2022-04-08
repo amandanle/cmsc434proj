@@ -7,11 +7,50 @@
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
     margin: auto;
-    //text-align: center;
     }
 
     body{
         background: #f1faee;
+        font-size: 6vw;
+    }
+
+    input, select, textarea, button{
+        font-size: 5vw;
+    }
+
+    h1{
+
+        text-align:center;
+    }
+    h6{
+
+         text-align:center;
+    }
+
+    img{
+        border-radius: 10%;
+        display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
+    }
+
+
+    input[type=checkbox]{
+      transform: scale(5);
+      display: inline;
+      margin-left:100px;
+      margin-right:50px;
+
+
+    }
+
+    .checkboxtext{
+        margin-left: 3em;
+        display: block;
+        position: relative;
+        margin-top: -1.4em;
+
     }
 
     .wrapper .sidebar{
@@ -65,7 +104,7 @@
 
     .wrapper .section .top_navbar{
         background: #457B9D;
-        height: 50px;
+        height: 90px;
         display: flex;
         align-items: center;
         padding: 0 30px;
@@ -90,21 +129,37 @@
         width: 100%;
     }
 
+    .logo{
+      padding-top: 20px;
+      width:90%;
+      height:10px;
+      
+    }
+
+    .page-container{
+        background-color:#457B9D;
+    }
+
     .profile-container{
-        width:100%;
-        height:100%;
+        width:85%;
         display: block;
         text-align: center;
-        float:left;
-        padding: 15px;
-        background-color: #ffffff;
+        float:center;
+        padding-top: 5px;
+        box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+        background-color: #f1faee;
+        font-size: 14px;
+       
     }
 
     .user{
         display: inline-block;
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
+        border-style: solid;
+        border-color: #f1faee;
+        box-shadow: 0 0 8px 3px #B8B8B8;
       
         background-repeat: no-repeat;
         background-position: center center;
@@ -131,6 +186,32 @@
         padding-left: 20px;
       }
 
+     
+    .alert {
+        padding: 15px;
+        background-color: #e63946;
+        color: white;
+        margin-bottom: 5px;
+        font-size: 15px;
+    }
+    
+    /* The close button */
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    /* When moving the mouse over the close button */
+    .closebtn:hover {
+        color: black;
+    }
+
     .menu-container{
         width:100%;
         height: 800px;
@@ -140,11 +221,11 @@
 
     .button {
         color: #497B9D;
-        padding: 30px 30px;
+        padding: 15px 15px;
         text-align: center;
         text-decoration: none;
         display: block;
-        font-size: 20px;
+        font-size: 15px;
         line-height: 14px;
       }
 
@@ -153,13 +234,11 @@
       }
 
     .button-container {
-        width: 100%;
         overflow-y: auto;
     }
     
     .button-container > a {
         position: relative;
-        width: 100%;
         height: 100px; 
         margin: 15px;
         display: inline-block;
@@ -168,7 +247,9 @@
     .action-container {
         float: auto;
         margin-bottom: 5px;
-        background: lightgray;  
+        width:80%;
+        background: #f1faee;  
+        box-shadow: 0 3px 3px rgba(0,0,0,0.2);
     }
 
     .title{
@@ -184,89 +265,98 @@
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1faee;
+    font-size: 4vw;
   }
   .tab button {
     background-color: #f1faee;
-    float: left;
+    float: none;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
     position: static;
+    font-size: 4vw;
 
   }
   .tab button:hover {
     background-color: #A8DADC;
+    font-size: 4vw;
   }
   .tab button.active {
-    background-color: lightgray;
+    background-color: #lightgray;
+    font-size: 4vw;
   }
   .tabcontent {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    font-size: 4vw;
   }
 
-    .hide{
-        display:none;
-      }
-      .show{
-        display:block;
-      }
-      
-      .addBtn {
-        right: 45%;
-        color: green;
-        font-size: 16px;
-        top: 70%;
-        position: absolute;
-      }
+  .tablinks {
+    font-size: 4vw;
 
-      ol li {
-        cursor: pointer;
-        position: relative;
-        padding: 12px 8px 12px 40px;
-        list-style-type: none;
-        background: #eee;
-        font-size: 18px;
-        transition: 0.2s;
-        
-        /* make the list items unselectable */
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+  }
 
-      ol li:hover {
-        background: #ddd;
-      }
+  #recipeName{
+    text-align:center;
+  }
 
-    .close {
-        position: absolute;
-        right: 0;
-        top: 0;
-        padding: 12px 16px 12px 16px;
-      }
-      
-    .close:hover {
-        background-color: #f44336;
-        color: white;
-      }
 
-      #addItem{
-        background-color: white;
-        background: fixed;
-        padding: 10px 10px;
-        padding-top: 3%;
-        margin: auto;
-        border-radius: 25px;
-        margin-left: 5%;
-        margin-right: 5%;
-        position:absolute;
-        width: 20%;
-        right: 60%;
-        z-index: 1;
-      }
+
+
+
+
+
+  .hide{
+    display:none;
+  }
+
+  
+  .addBtn {
+    color: green;
+  }
+
+  ol li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 60px;
+    list-style-type: none;
+    background: white;
+    font-size: 60px;
+    transition: 0.2s;
+    
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  ol li:hover {
+    background: lightgray;
+  }
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+  
+.close:hover {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .addItem{
+    margin: auto;
+    position:absolute;
+  }
+
+  .itemInfo{
+    margin: auto;
+    position:absolute;
+  }
