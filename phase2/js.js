@@ -92,6 +92,7 @@ function showRecipe(num){
     let list = document.getElementById("ingredientsList");
     heading = document.createElement("h3");
     heading.innerHTML = "Ingredients";
+    heading.style.textAlign = "center";
     list.appendChild(heading)
     var ing = recipe.ingredients;
     ing.forEach((item)=>{
@@ -108,16 +109,21 @@ function showRecipe(num){
         span.innerHTML += item.name;
         list.appendChild(span);
       })
-
       var button = document.createElement("button");
-      button.innerHTML = "add to shopping list";
+      button.innerHTML = '<h6>add to shopping list</h6>';
       button.addEventListener("click",  function() {addToShoppingList(ing)});
+      button.style.position = "absolute";
+      button.style.left = "50%";
+      button.style.transform = "translateX(-50%)";
       list.appendChild(button);
+      list.appendChild(document.createElement("br"));
+
 
 
     var divInstructions = document.getElementById("instructionsList");
     heading = document.createElement("h3");
-    heading.innerHTML = "Instructions:";
+    heading.innerHTML = "Instructions";
+    heading.style.textAlign = "center";
     divInstructions.appendChild(heading);
     var instructs = recipe.steps;
     instructs.forEach((item)=>{
