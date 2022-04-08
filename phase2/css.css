@@ -336,11 +336,19 @@
   }
 
   .addItem{
-    margin: auto;
     position:absolute;
   }
 
   .itemInfo{
     margin: auto;
     position:absolute;
+  }
+
+  .stay{
+    margin: auto;
+    position:absolute;
+  }
+
+  .empty-list{
+    padding: 25px;
   }
