@@ -41,7 +41,7 @@
 
 
 <div id = "empty-list">
-    Your Inventory is Empty, click the Add Item button to add an item to your inventory.
+    Your Inventory is Empty, click the Add Item button to add an item to your inventory. Click on an item after adding to check its information!
 </div>
 
 
@@ -57,23 +57,6 @@
     </td>
   </tr>
 
-  <tr> 
-    <td>
-      <label> Purchased: </label>
-    </td>
-    <td>
-    <label>
-      <span id='purchased-date'></span>
-      <script> 
-        n =  new Date();
-        y = n.getFullYear();
-        m = n.getMonth() + 1;
-        d = n.getDate();
-        document.getElementById("purchased-date").innerHTML = m + "-" + d + "-" + y;
-        </script>
-    </label>
-    </td>
-  </tr>
 
   <tr> 
       <td> 
@@ -81,6 +64,24 @@
       </td>
       <td> 
         <input type="text" id="quantity" placeholder="Enter a quantity">
+      </td>
+    </tr>
+
+    <tr> 
+      <td>
+        <label> Purchased: </label>
+      </td>
+      <td>
+      <label>
+        <span id='purchased-date'></span>
+        <script> 
+          var inputdate =  new Date();
+          y = inputdate.getFullYear();
+          m = inputdate.getMonth() + 1;
+          d = inputdate.getDate();
+          document.getElementById("purchased-date").innerHTML = m + "-" + d + "-" + y;
+          </script>
+      </label>
       </td>
     </tr>
 
@@ -93,8 +94,8 @@
   </tr>
 
   <tr> 
-    <td> <span onclick="closeAdd()" class="closeBtn">Close</span> </td>
-    <td> <span onclick="newItemInfo()" class="finishBtn">Add</span></td>
+    <td> <button onclick="closeAdd()">Close</span> </td>
+    <td> <button onclick="newItemInfo()" class="finishBtn">Add</span></td>
   </tr>
   </table>
 </div>
@@ -109,7 +110,7 @@
 </ol>
 
 <div>
-  <span onclick="addItem()" id="addBtn" class="addBtn">Add Item</span>
+  <button onclick="addItem()" id="addBtn">Add Item</span>
 </div>
 
 
@@ -121,21 +122,22 @@
             <td> <span id='item-name-info'> </span> </td> 
           </tr> 
           <tr>
-            <td> <label for="food-input">Purchased: </label></td>
-            <td> <span id='purchased-date-info'> </span> </td> 
-          </tr> 
-          <tr>
             <td> <label for="food-input">Quantity: </label></td>
             <td><span id='amount'> </span>
             </td> 
+          </tr> 
+          <tr>
+            <td> <label for="food-input">Purchased: </label></td>
+            <td> <span id='purchased-date-info'> </span> </td> 
           </tr> 
           <tr>
             <td> <label for="food-input">Best By: </label></td>
             <td><span id='item-expir-date-info'> </span> </td> 
           </tr> 
           <tr> 
-            <td><span class="editBtn" onClick="editButtonAlert()">Edit</span></td>
-            <td padding="100px"> <span onclick="closeInfo()" class="closeBtn">Close</span> </td>
+            <td><button class="editBtn" onClick="editButtonAlert()">Edit</span></td>
+            <td padding="100px"> 
+              <button onclick="closeInfo()" class="closeBtn">Close</span> </td>
           </tr>
         </table>
         </div>
@@ -263,7 +265,7 @@ function addItem(){
     foodItems.set(inputValue, currInfo);
     var t = document.createTextNode(inputValue);
     li.appendChild(t);
-    if (inputValue === '' || quantity === '') {
+    if (inputValue == "" || quantity == "") {
     alert("You must write something!");
     x.style.display = "block";
     } else {
