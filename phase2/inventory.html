@@ -36,16 +36,17 @@
 
 
 
-<div class="hide" id="addItem">
+<div class= "hide" id="addItem">
   <table> 
   <tr> 
     <td> 
       <label for="food-input">Item Name: </label>
     </td>
     <td> 
-      <input type="text" id="food-input" placeholder="Enter a food...">
+      <input type="text" id="food-input" placeholder="Enter a food item">
     </td>
   </tr>
+
   <tr> 
     <td>
       <label> Purchased: </label>
@@ -63,14 +64,16 @@
     </label>
     </td>
   </tr>
+
   <tr> 
       <td> 
         <label for="quantity">Quantity: </label>
       </td>
       <td> 
-        <input type="text" id="quantity" placeholder="How many... ">
+        <input type="text" id="quantity" placeholder="Enter a quantity">
       </td>
     </tr>
+
     <td> 
       <label for="expiration">Best By:</label>
     </td>
@@ -78,13 +81,17 @@
       <input type="date" id="expir-date" name="expir-date">
     </td>
   </tr>
+
   <tr> 
-    <td> <span onclick="closeAdding()" class="closeBtn">Close</span> </td>
-    <td> <span onclick="newItem()" class="finishBtn">Add</span></td>
+    <td> <span onclick="closeAdd()" class="closeBtn">Close</span> </td>
+    <td> <span onclick="newItemInfo()" class="finishBtn">Add</span></td>
   </tr>
   </table>
 </div>
-<!-- ITEM INFO -->
+
+
+
+
 
 
 <ol id="foodItems">
@@ -206,13 +213,14 @@ function closeInfo(){
 
 function addItem(){
     var x = document.getElementById("addItem");
-    if (x.style.display === "none") {
+    if (x.style.display !== "block") {
+      x.style.display = "block";
       var hide = document.getElementById("foodItems");
       hide.style.display = "none";
       hide = document.getElementById("empty-list");
       hide.style.display = "none";
-      document.getElementById('addBtn').style.display='none';
-      x.style.display = "block";
+      var y = document.getElementById('addBtn');
+      y.style.display = "none";
     } else {
       x.style.display = "none";
     }
@@ -222,7 +230,7 @@ function addItem(){
 
 
 
-  function closeAdding(){
+  function closeAdd(){
     document.getElementById('addBtn').style.display='block';
     document.getElementById("addItem").style.display = 'none';
     var hide = document.getElementById("foodItems");
@@ -233,18 +241,16 @@ function addItem(){
 
 
 
-  function newItem() {
+  function newItemInfo() {
     var x = document.getElementById("addItem");
     x.style.display = "none";
     var li = document.createElement("li");
-    /*Getting item info*/
     var inputValue = document.getElementById("food-input").value;
     var quantity = document.getElementById("quantity").value;
     var purDate = document.getElementById("purchased-date").innerText;
     var expirDate = document.getElementById("expir-date").value;
     var currInfo = [purDate, quantity, expirDate];
     foodItems.set(inputValue, currInfo);
-    /* Adding a new item to the list */
     var t = document.createTextNode(inputValue);
     li.appendChild(t);
     if (inputValue === '' || quantity === '') {
@@ -271,10 +277,6 @@ function addItem(){
       }
     }
   }
-
-
-
-
 
 
 
