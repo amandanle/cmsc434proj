@@ -163,18 +163,23 @@ function addToInventory(item){
     alert("Added to Inventory!");
 }
 
-function addToList(item){
-    var item = document.getElementById("itemName").value;
-    console.log(item);
-    var amount = document.getElementById("itemAmount").value;
-    console.log(amount);
-    var divTraderJoesList = document.getElementById("TraderJoesList");
+function addToList(item) {
     
-    var store = document.getElementById("storeSelection");
-    var newCheckbox = document.createElement("input");
-    newCheckbox.type = "checkbox";
-    divTraderJoesList.appendChild(newCheckbox);
-    divTraderJoesList.innerHTML += " " + amount + " ";
-    divTraderJoesList.innerHTML += item;
-    divTraderJoesList.appendChild(document.createElement("br"));
+   /* if (document.getElementById("itemName").value == "Item Name"
+        || document.getElementById("itemAmount".value.isNaN()))
+        alert("Invalid Input Try Again");
+    else*/
+        var item = document.getElementById("itemName").value;
+        console.log(item);
+        var amount = document.getElementById("itemAmount").value;
+        console.log(amount);
+        var divTraderJoesList = document.getElementById("TraderJoesList");
+
+        var store = document.getElementById("storeSelection");
+        var newCheckbox = document.createElement("input");
+        newCheckbox.type = "checkbox";
+        divTraderJoesList.appendChild(newCheckbox);
+        divTraderJoesList.innerHTML += " " + amount + " ";
+        divTraderJoesList.innerHTML += item;
+        divTraderJoesList.appendChild(document.createElement("br"));
 }
