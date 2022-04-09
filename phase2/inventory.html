@@ -64,10 +64,10 @@
     <label>
       <span id='purchased-date'></span>
       <script> 
-        n =  new Date();
-        y = n.getFullYear();
-        m = n.getMonth() + 1;
-        d = n.getDate();
+        var n =  new Date();
+        var y = n.getFullYear();
+        var m = n.getMonth() + 1;
+        var d = n.getDate();
         document.getElementById("purchased-date").innerHTML = m + "-" + d + "-" + y;
         </script>
     </label>
@@ -112,7 +112,6 @@
 </div>
 
 
-
         <div class= "hide" id="itemInfo"> 
         <table> 
           <tr>
@@ -133,8 +132,8 @@
             <td><span id='expiration'> </span> </td> 
           </tr> 
           <tr> 
-            <td padding = "50px"><span class="editBtn" onClick="editButtonAlert()">Edit</span></td>
-            <td padding = "50px"> <span onclick="closeInfo()" class="closeBtn">Close</span> </td>
+            <td padding = "50px"> <button onClick="location.href = 'comingsoon.html';">Edit</span></td>
+            <td padding = "50px"> <button onclick="closeInfo()" class="closeBtn">Close</span> </td>
           </tr>
         </table>
         </div>
@@ -165,14 +164,14 @@ function closeInfo(){
 
           var itemName = ev.target.innerHTML;
           itemName = itemName.split("<")[0];
-          var currInfo = foodItems.get(itemName);
+          var Info = foodItems.get(itemName);
           document.getElementById('item-name').innerText = itemName;
-          document.getElementById('purchased-date2').innerText = currInfo[0];
-          document.getElementById('amount').innerText = currInfo[1];
-          if (currInfo[2] != "") {
-          var year = currInfo[2].split("-")[0];
-          var month = currInfo[2].split("-")[1];
-          var day = currInfo[2].split("-")[2];
+          document.getElementById('purchased-date2').innerText = Info[0];
+          document.getElementById('amount').innerText = Info[1];
+          if (Info[2] != "") {
+          var year = Info[2].split("-")[0];
+          var month = Info[2].split("-")[1];
+          var day = Info[2].split("-")[2];
           document.getElementById('expiration').innerText = month + "-" + day + "-" + year;
           }
           
