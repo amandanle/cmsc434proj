@@ -35,7 +35,7 @@
 
 
 <!-- inventory stuff -->
-
+<!-- referenced from https://www.w3schools.com/howto/howto_js_todolist.asp -->
 
 
 
@@ -113,15 +113,15 @@
 
 
 
-        <div class='hide' id='itemInfo'> 
+        <div class= "hide" id="itemInfo"> 
         <table> 
           <tr>
             <td> <label for="food-input">Item Name: </label></td>
-            <td> <span id='item-name-info'> </span> </td> 
+            <td> <span id='item-name'> </span> </td> 
           </tr> 
           <tr>
             <td> <label for="food-input">Purchased: </label></td>
-            <td> <span id='purchased-date-info'> </span> </td> 
+            <td> <span id='purchased-date2'> </span> </td> 
           </tr> 
           <tr>
             <td> <label for="food-input">Quantity: </label></td>
@@ -130,11 +130,11 @@
           </tr> 
           <tr>
             <td> <label for="food-input">Best By: </label></td>
-            <td><span id='item-expir-date-info'> </span> </td> 
+            <td><span id='expiration'> </span> </td> 
           </tr> 
           <tr> 
-            <td><span class="editBtn" onClick="editButtonAlert()">Edit</span></td>
-            <td padding="100px"> <span onclick="closeInfo()" class="closeBtn">Close</span> </td>
+            <td padding = "50px"><span class="editBtn" onClick="editButtonAlert()">Edit</span></td>
+            <td padding = "50px"> <span onclick="closeInfo()" class="closeBtn">Close</span> </td>
           </tr>
         </table>
         </div>
@@ -166,14 +166,14 @@ function closeInfo(){
           var itemName = ev.target.innerHTML;
           itemName = itemName.split("<")[0];
           var currInfo = foodItems.get(itemName);
-          document.getElementById('item-name-info').innerText = itemName;
-          document.getElementById('purchased-date-info').innerText = currInfo[0];
+          document.getElementById('item-name').innerText = itemName;
+          document.getElementById('purchased-date2').innerText = currInfo[0];
           document.getElementById('amount').innerText = currInfo[1];
           if (currInfo[2] != "") {
           var year = currInfo[2].split("-")[0];
           var month = currInfo[2].split("-")[1];
           var day = currInfo[2].split("-")[2];
-          document.getElementById('item-expir-date-info').innerText = month + "-" + day + "-" + year;
+          document.getElementById('expiration').innerText = month + "-" + day + "-" + year;
           }
           
           document.getElementById('itemInfo').style.display="block";
@@ -254,25 +254,31 @@ function addItem(){
     var x = document.getElementById("addItem");
     x.style.display = "none";
     var li = document.createElement("li");
-    var inputValue = document.getElementById("food-input").value;
+    var itemLookup = document.getElementById("food-input").value;
     var quantity = document.getElementById("quantity").value;
     var purDate = document.getElementById("purchased-date").innerText;
     var expirDate = document.getElementById("expir-date").value;
     var currInfo = [purDate, quantity, expirDate];
-    foodItems.set(inputValue, currInfo);
-    var t = document.createTextNode(inputValue);
+
+
+    /* put info from added info into a map so that users can view it later */
+    foodItems.set(itemLookup, currInfo); 
+    var t = document.createTextNode(itemLookup);
     li.appendChild(t);
-    if (inputValue === '' || quantity === '') {
-    alert("You must write something!");
+    if (itemLookup == "" || quantity == "") {
+    alert("You must have a food item and quantity!");
     x.style.display = "block";
+    document.getElementById("food-input").value = "";
+    document.getElementById("quantity").value = "";
     } else {
       var hide = document.getElementById("foodItems");
       hide.style.display = "block";
       document.getElementById("foodItems").appendChild(li);
       document.getElementById('addBtn').style.display="block";
+      document.getElementById("food-input").value = "";
+      document.getElementById("quantity").value = "";
     }
-    document.getElementById("food-input").value = "";
-    document.getElementById("quantity").value = "";
+
     var span = document.createElement("SPAN");
     var txt = document.createTextNode("\u00D7");
     span.className = "close";
