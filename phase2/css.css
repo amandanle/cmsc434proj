@@ -259,6 +259,10 @@
         text-decoration: line-through;
     }
 
+    input[type=checkbox]:checked + span.strikethrough{
+            text-decoration: line-through;
+    }
+
   .tab {
     overflow: hidden;
     border: 1px solid lightgray;
