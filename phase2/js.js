@@ -191,30 +191,43 @@ function addToList(item) {
         alert("Invalid Input Try Again");
     else*/
         var item = document.getElementById("itemName").value;
-        console.log(item);
         var amount = document.getElementById("itemAmount").value;
-        console.log(amount);
         var divTraderJoesList = document.getElementById("TraderJoesList");
-
+        var divWholeFoodsList = document.getElementById("WholeFoodsList");
         var store = document.getElementById("storeSelection");
+        var storeval = store.options[store.selectedIndex].value;
 //        var newCheckbox = document.createElement("input");
 //        newCheckbox.type = "checkbox";
 //        divTraderJoesList.appendChild(newCheckbox);
 //        divTraderJoesList.innerHTML += " " + amount + " ";
 //        divTraderJoesList.innerHTML += item;
 //        divTraderJoesList.appendChild(document.createElement("br"));
-
-
-        var newCheckbox = document.createElement("input");
-        newCheckbox.type = "checkbox";
-        var span = document.createElement("span");
-        var para = document.createElement("p");
-        span.classList.add('checkboxtext');
-        para.innerHTML += " " + amount + " ";
-        para.innerHTML += item;
-        span.appendChild(para);
-        span.classList.add('strikethrough');
-        divTraderJoesList.appendChild(newCheckbox);
-        divTraderJoesList.appendChild(span);
+        if(storeval == "Trader Joe's"){
+            var newCheckbox = document.createElement("input");
+            newCheckbox.type = "checkbox";
+            var span = document.createElement("span");
+            var para = document.createElement("p");
+            span.classList.add('checkboxtext');
+            para.innerHTML += " " + amount + " ";
+            para.innerHTML += item;
+            span.appendChild(para);
+            span.classList.add('strikethrough');
+            divTraderJoesList.appendChild(newCheckbox);
+            divTraderJoesList.appendChild(span);
+        }
+        else if(storeval == "Whole Foods"){
+            var newCheckbox = document.createElement("input");
+            newCheckbox.type = "checkbox";
+            var span = document.createElement("span");
+            var para = document.createElement("p");
+            span.classList.add('checkboxtext');
+            para.innerHTML += " " + amount + " ";
+            para.innerHTML += item;
+            span.appendChild(para);
+            span.classList.add('strikethrough');
+            divWholeFoodsList.appendChild(newCheckbox);
+            divWholeFoodsList.appendChild(span);
+        }
+        
         //divTraderJoesList.appendChild(document.createElement("br"));
 }
