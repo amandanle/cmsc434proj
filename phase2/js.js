@@ -169,13 +169,15 @@ function removeKeyboard(){
 //function to add the item to shoppingList
 function addToShoppingList(item){
     shoppingList.push(item);
-    alert("Added to Shopping List!");
+    //alert("Added to Shopping List!");
+    document.getElementById("savedAlert").style.display = "block";
     //console.log(shoppingList);
 }
 
 function addToPinned(item){
     pinned.push(item);
-    alert("Added to Pinned Recipes!");
+    //alert("Added to Pinned Recipes!");
+    document.getElementById("pinnedAlert").style.display = "block";
 }
 
 //function to add item to inventory
@@ -196,12 +198,6 @@ function addToList(item) {
         var divWholeFoodsList = document.getElementById("WholeFoodsList");
         var store = document.getElementById("storeSelection");
         var storeval = store.options[store.selectedIndex].value;
-//        var newCheckbox = document.createElement("input");
-//        newCheckbox.type = "checkbox";
-//        divTraderJoesList.appendChild(newCheckbox);
-//        divTraderJoesList.innerHTML += " " + amount + " ";
-//        divTraderJoesList.innerHTML += item;
-//        divTraderJoesList.appendChild(document.createElement("br"));
         if(storeval == "Trader Joe's"){
             var newCheckbox = document.createElement("input");
             newCheckbox.type = "checkbox";
