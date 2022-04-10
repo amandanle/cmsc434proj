@@ -57,16 +57,15 @@
 
                 <p id="newItemLabel">Add a New Item:</p>
         <form id="adding">
-            <input type="text" name="itemName" id="itemName" placeholder="Item Name" onClick="displayKeyboard();" onblur="removeKeyboard();"/>
-            <input type="text" name="itemAmount" id="itemAmount" placeholder="Item Amount" onClick="displayKeyboard();" onblur="removeKeyboard();"/>
+            <input type="text" name="itemName" id="itemName" placeholder=" Item Name" size = "19"onClick="displayKeyboard();" onblur="removeKeyboard();"/>
+            <input type="text" name="itemAmount" id="itemAmount" placeholder=" Amount" size = "8" maxlength="2" onClick="displayKeyboard();" onblur="removeKeyboard();"/>
             <select id = "storeSelection">
-                <option value="Other">General Store</option>
                 <option value="Trader Joe's">Trader Joe's</option>
                 <option value="Whole Foods">Whole Foods</option>
-                <option value="Aldi">Aldi</option>
-                <option value="Walmart">Walmart</option>
+                <option value="+ Add Store">+ Add Store</option>
                 
             </select> 
+
             <input type="button" value="Add" id="addButton" onClick="addToList()" name="add"/>
         </form> <br>
 
