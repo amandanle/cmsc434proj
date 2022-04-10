@@ -109,6 +109,7 @@ function showRecipe(num){
         newCheckbox.type = "checkbox";
         var span = document.createElement("span");
         span.classList.add('checkboxtext');
+        span.classList.add('strikethrough');
 
 
         var newCheckbox = document.createElement("input");
@@ -144,6 +145,7 @@ function showRecipe(num){
         span.classList.add('checkboxtext');
         para.innerHTML += item;
         span.appendChild(para);
+        span.classList.add('strikethrough');
         divInstructions.appendChild(newCheckbox);
         divInstructions.appendChild(span);
 
@@ -195,10 +197,24 @@ function addToList(item) {
         var divTraderJoesList = document.getElementById("TraderJoesList");
 
         var store = document.getElementById("storeSelection");
+//        var newCheckbox = document.createElement("input");
+//        newCheckbox.type = "checkbox";
+//        divTraderJoesList.appendChild(newCheckbox);
+//        divTraderJoesList.innerHTML += " " + amount + " ";
+//        divTraderJoesList.innerHTML += item;
+//        divTraderJoesList.appendChild(document.createElement("br"));
+
+
         var newCheckbox = document.createElement("input");
         newCheckbox.type = "checkbox";
+        var span = document.createElement("span");
+        var para = document.createElement("p");
+        span.classList.add('checkboxtext');
+        para.innerHTML += " " + amount + " ";
+        para.innerHTML += item;
+        span.appendChild(para);
+        span.classList.add('strikethrough');
         divTraderJoesList.appendChild(newCheckbox);
-        divTraderJoesList.innerHTML += " " + amount + " ";
-        divTraderJoesList.innerHTML += item;
-        divTraderJoesList.appendChild(document.createElement("br"));
+        divTraderJoesList.appendChild(span);
+        //divTraderJoesList.appendChild(document.createElement("br"));
 }
