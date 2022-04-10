@@ -10,10 +10,15 @@ let allergenInformation = new Array();
 // level of recipes
 let level = new String();
 
-//let recipesJson = '[{ "name": "Cereal", "info": ["easy", "vegetarian", "gluten-free"], "ingredients":[{"quantity": "2 cups","name": " cereal"},{"quantity": "2 cups","name": "milk"} ],"steps": ["Put cereal of choosing into bowl.","pour milk in bowl and enjoy."],"imageURL": "cereal.jpeg"},{ "name": "Cereal","ingredients": [{"quantity": "1","name": " beef roast", "type": "Meat"}]} ]';
-//for the json data to be read in 
+let pinned = new Array();
 
-// let recipes;
+
+
+let recipesJson =' [{"name":"Cereal","info":[" easy ","| nut-free ","| gluten-free ","| vegetarian ","| vegan |"],"ingredients":[{"quantity":"1 cup","name":"Cereal"},{"quantity":"2 cups ","name":"Milk"}],"steps":["Put cereal of choosing into bowl","Pour milk in and enjoy"],"imageURL":"recipeImages/cereal.jpeg"},{"name":"Banana Bread","info":["easy"," | vegetarian | ","vegan"],"ingredients":[{"quantity":"2","name":"Bananas"},{"quantity":"1/3 cup","name":"butter"},{"quantity":"1/2 teaspoon","name":"Baking Soda"},{"quantity":"3/4 cup","name":"Sugar"},{"quantity":"1 pinch","name":"Salt"},{"quantity":"1","name":"Egg"},{"quantity":"1 teaspoon","name":"Vanilla Extract"},{"quantity":"1 1/2 cups","name":"All purpose flour"}],"steps":["Preheat oven to 350 degrees","Butter a loaf pan","In a mixing bowl, mash bananas with a fork until smooth","Stir butter into mashed bananas","Mix dry ingredients together and then stir in wet ingredients","Pour batter into pan and bake for 50 minutes. Let cool before serving"],"imageURL":"recipeImages/bananabread.webp"}]';
+
+//for the json data to be read in 
+var data;
+ let recipes;
 // fetch("./recipe.json").then(
 //         function(u){ return u.json();}
 //       ).then(
@@ -25,17 +30,19 @@ let level = new String();
 function main(){
 
     // for the menu button to open and close
-    var menuButton = document.querySelector(".menuButton");
-    menuButton.addEventListener("click", function(){ document.querySelector("body").classList.toggle("active");});
+//    var menuButton = document.querySelector(".menuButton");
+//    menuButton.addEventListener("click", function(){ document.querySelector("body").classList.toggle("active");});
 
     // for the recipe form
-    //document.getElementById("processRecipeButton").onclick = processRecipeData;
+    document.getElementById("processRecipeButton").onclick = processRecipeData;
+
 
 }
 
 function processRecipeData(){
 
     var preference = document.getElementById("preference");
+    //preference.style.display="block"
     var options = preference.options;
     var restrictions = Array.from(options);
     restrictions.forEach(r => {
@@ -48,85 +55,140 @@ function processRecipeData(){
     }
     var levelSelected = document.getElementById("levelSelection");
     level = levelSelected.options[levelSelected.selectedIndex].text
-    showRecipe();
+    document.getElementById("levelSelection").style.display = "none";
+     document.getElementById("allergyForm").style.display = "none";
+     document.getElementById("levelQuestion").style.display = "none";
+   // document.getElementById("allergenForm").style.display = "none";
+    showRecipe(0);
+
 }
 
+//showRecipe.apply(this, recipes);
 //function to display the recipe taken based on options/levels from json
-function showRecipe(){
-    //remove the form??
+function showRecipe(num){
 
-    //find recipe (just using the first one for now)
-    //can just iterate through the recipe's info to find satisfying recipe
-    recipe = recipes[0];
+    //alert(num);
+    data = JSON.parse(recipesJson);
+    //console.log(recipes);
+    recipe = data[num];
+
 
     //display found recipe
     var divName =  document.getElementById("recipeName");
-    divName.innerHTML = recipe.name;
+    heading = document.createElement("h1");
+    heading.innerHTML = recipe.name;
+    divName.appendChild(heading);
+
+    var saveButton = document.createElement("button");
+    saveButton.innerHTML = '<h6>save to pinned</h6>';
+    saveButton.addEventListener("click",  function() {addToPinned(recipe.name)});
+    divName.appendChild(saveButton);
 
     var divInfo = document.getElementById("recipeInfo");
+    heading = document.createElement("h6");
     var info = recipe.info;
     for (var i = 0; i < info.length; i++) {
-        divInfo.innerHTML += info[i];
-        divInfo.innerHTML += ' ';
+        heading.innerHTML += info[i];
     }
+    divInfo.appendChild(heading);
     
     var divImg = document.getElementById("recipeImage");
     img = document.createElement("img");
     img.src = recipe.imageURL;
+    img.width = "500";
     divImg.appendChild(img);
 
     let list = document.getElementById("ingredientsList");
+    heading = document.createElement("h3");
+    heading.innerHTML = "Ingredients";
+    heading.style.textAlign = "center";
+    list.appendChild(heading)
     var ing = recipe.ingredients;
     ing.forEach((item)=>{
-        let li = document.createElement("li");
-        li.innerText = item.name;
-        var checkBox = document.createElement('input');
-        checkBox.type = "checkbox";
-        li.appendChild(checkBox);
+        var newCheckbox = document.createElement("input");
+        newCheckbox.type = "checkbox";
+        var span = document.createElement("span");
+        span.classList.add('checkboxtext');
 
-        var button = document.createElement("button");
-        button.innerHTML = "add to shopping list";
-        button.addEventListener("click",  function() {addToShoppingList(item.name)});
-        console.log(shoppingList);
-        li.appendChild(button);
-        list.appendChild(li);
+
+        var newCheckbox = document.createElement("input");
+        newCheckbox.type = "checkbox";
+        list.appendChild(newCheckbox);
+        span.innerHTML  += " " + item.quantity + " ";
+        span.innerHTML += item.name;
+        list.appendChild(span);
       })
+      var button = document.createElement("button");
+      button.innerHTML = '<h6>add to shopping list</h6>';
+      button.addEventListener("click",  function() {addToShoppingList(ing)});
+      button.style.position = "absolute";
+      button.style.left = "50%";
+      button.style.transform = "translateX(-50%)";
+      list.appendChild(button);
+      list.appendChild(document.createElement("br"));
+
+
 
     var divInstructions = document.getElementById("instructionsList");
+    heading = document.createElement("h3");
+    heading.innerHTML = "Instructions";
+    heading.style.textAlign = "center";
+    divInstructions.appendChild(heading);
     var instructs = recipe.steps;
     instructs.forEach((item)=>{
-        let li = document.createElement("li");
-        li.innerText = item;
-        var checkBox = document.createElement('input');
-        checkBox.type = "checkbox";
-        li.appendChild(checkBox);
-        list.appendChild(li);
+
+        var newCheckbox = document.createElement("input");
+        newCheckbox.type = "checkbox";
+        var span = document.createElement("span");
+        var para = document.createElement("p");
+        span.classList.add('checkboxtext');
+        para.innerHTML += item;
+        span.appendChild(para);
+        divInstructions.appendChild(newCheckbox);
+        divInstructions.appendChild(span);
+
       })
+
+    divInstructions.appendChild(document.createElement("br"));
 }
+
+
 
 //function to add the item to shoppingList
 function addToShoppingList(item){
     shoppingList.push(item);
+    alert("Added to Shopping List!");
     //console.log(shoppingList);
+}
+
+function addToPinned(item){
+    pinned.push(item);
+    alert("Added to Pinned Recipes!");
 }
 
 //function to add item to inventory
 function addToInventory(item){
     inventory.push(item);
+    alert("Added to Inventory!");
 }
 
-function addToList(item){
-    var item = document.getElementById("itemName").value;
-    console.log(item);
-    var amount = document.getElementById("itemAmount").value;
-    console.log(amount);
-    var divTraderJoesList = document.getElementById("TraderJoesList");
+function addToList(item) {
     
-    var store = document.getElementById("storeSelection");
-    var newCheckbox = document.createElement("input");
-    newCheckbox.type = "checkbox";
-    divTraderJoesList.appendChild(newCheckbox);
-    divTraderJoesList.innerHTML += " " + amount + " ";
-    divTraderJoesList.innerHTML += item;
-    divTraderJoesList.appendChild(document.createElement("br"));
+   /* if (document.getElementById("itemName").value == "Item Name"
+        || document.getElementById("itemAmount".value.isNaN()))
+        alert("Invalid Input Try Again");
+    else*/
+        var item = document.getElementById("itemName").value;
+        console.log(item);
+        var amount = document.getElementById("itemAmount").value;
+        console.log(amount);
+        var divTraderJoesList = document.getElementById("TraderJoesList");
+
+        var store = document.getElementById("storeSelection");
+        var newCheckbox = document.createElement("input");
+        newCheckbox.type = "checkbox";
+        divTraderJoesList.appendChild(newCheckbox);
+        divTraderJoesList.innerHTML += " " + amount + " ";
+        divTraderJoesList.innerHTML += item;
+        divTraderJoesList.appendChild(document.createElement("br"));
 }

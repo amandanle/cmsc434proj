@@ -9,87 +9,62 @@
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css.css">
-    <title>Recipes Page</title>
+    <title>Find a Suggested Recipe!</title>
 </head>
+
+<div class="logotop">
+    <a href="home.html" > <img src="logos/kk_full_blue.png" alt="KitchenKompanion"></a>
+</div>
 
 <body class = "active" onload="main()">
 <div class="wrapper">
-    <!--Menu Bar -->
-    <div class="sidebar">
-        <ul>
-            <li>
-                <a href="home.html" class="active">
-                    <span class="icon"><i class="fas fa-home"></i></span>
-                    <span class="item">Home</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="recipes.html" class="active">
-                    <span class="icon"><i class="fa-solid fa-book"></i></span>
-                    <span class="item">Recipes</span>
-                </a>
-            </li>
-            <li>
-                <!-- add correct filename to href below                   -->
-                <a href="shoppinglist.html" class="active">
-                    <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
-                    <span class="item">Shopping List</span>
-                </a>
-            </li>
-
-            <li>
-                <!-- add correct filename to href below                   -->
-                <a href="inventory.html" class="active">
-                    <span class="icon"><i class="fa-solid fa-utensils"></i></span>
-                    <span class="item">Inventory</span>
-                </a>
-            </li>
-
-        </ul>
+<!--    tabs!!-->
+    <div class="tab">
+        <button class="tablinks" > <a href="home.html" > Home </a></button>
+        <button class="tablinks" > <a href="recipes.html" > Search Recipes </a></button>
+        <button class="tablinks" > <a href="shoppingList.html" > Shopping List </a></button>
+        <button class="tablinks" > <a href="inventory.html" > Inventory </a></button>
     </div>
     <div class="section">
         <div class="top_navbar">
-            <div class="menuButton">
-                <a href="#">
-                    <i class="fas fa-bars"></i>
-                </a>
-            </div>
-            <!--Put title of page here!-->
             <div class="title">
-                Recipes
+                Find a Suggested Recipe!
             </div>
         </div>
     </div>
 </div>
 
-<div class="levelSelection" >
-    Whats your level of cooking?
+<div class="levelSelection" style="line-height: 1.5; text-align:center;">
+    <p id="levelQuestion">Whats your level of cooking? </p>
     <!--        create js function to show recipe based on level-->
-    <select onclick="showRecipe();" class = "select" onchange="showRecipe();" name="levels" id="levelSelection">
-        <option value="easy" selected="true">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
-    </select>
+    <center>
+        <select  class = "select"  name="levels" id="levelSelection" style="width:300px; text-align:center;">
+            <option value="easy" selected="true">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </center>
 </div>
-<div class="allergenForm">
-    <form>
+<div class="allergenForm" style="line-height: 1.5;text-align:center;">
+    <center>
+        <form id="allergyForm">
         <legend>Any food restrictions?</legend>
-        <div>
-            <select id="preference" multiple required size=5>
-                <option value="Nuts">Nuts</option>
-                <option value="GlutenFree">Gluten Free</option>
-                <option value="Vegetarian">Vegetarian </option>
-                <option value="Vegan">Vegan</option>
-                <option value="None">None</option>
-            </select>
-            <!--radio buttons or select?? -->
-        </div>
+
+            <div>
+                <select id="preference" multiple required size=5 style="width:300px; text-align:center;">
+                    <option value="Nuts">Nuts</option>
+                    <option value="GlutenFree">Gluten Free</option>
+                    <option value="Vegetarian">Vegetarian </option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="None">None</option>
+                </select>
+                <!--radio buttons or select?? -->
+            </div>
 
         <button id="processRecipeButton">Give me a recipe!</button>
-<!--        do we need a reset button...?-->
-<!--        <input type="reset">-->
+
     </form>
+    </center>
 </div>
 <div id="recipe">
 
@@ -98,23 +73,27 @@
    <div id="recipeName">
 <!--        recipe name/title goes here-->
    </div>
+
+
    <div id="recipeInfo">
 <!--        recipe info goes here (allergen information, time, level, etc)-->
    </div>
+<br>
    <div id="recipeImage">
 <!--        image for recipe goes here-->
    </div>
-   <div id="ingredients">
-       Ingredients:
-       <ol id = "ingredientsList"></ol>
-<!--        List of ingredients go here-->
-<!--        add options to add to shopping list as well-->
-   </div>
-   <div id="Instructions">
-       Instructions:
+<br>
+<div id="ingredients" style="line-height: 1.5;">
+    <!--       Ingredients:-->
+    <ol id = "ingredientsList"></ol>
+    <!--        List of ingredients go here-->
+    <!--        add options to add to shopping list as well-->
+</div>
+<div id="Instructions" style="line-height: 1.5;">
+    <!--       Instructions:-->
     <ol id = "instructionsList"></ol>
-<!--        list of instructions go here-->
-   </div>
+    <!--        list of instructions go here-->
+</div>
 
 </body>
 </html>

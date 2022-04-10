@@ -12,49 +12,23 @@
     <title>Shopping List Page</title>
     </head>
 
+    <div class="logotop">
+        <a href="home.html" ><img src="logos/kk_full_blue.png" alt="KitchenKompanion"></a>
+    </div>
+
     <body class = "active" onload="main()">
         <div class="wrapper">
-            <!--Menu Bar -->
-            <div class="sidebar">
-                <ul>
-                    <li>
-                        <a href="home.html" class="active">
-                            <span class="icon"><i class="fas fa-home"></i></span>
-                            <span class="item">Home</span>
-                        </a>
-                    </li>
-        
-                    <li>
-                        <a href="recipes.html" class="active">
-                            <span class="icon"><i class="fa-solid fa-book"></i></span>
-                            <span class="item">Recipes</span>
-                        </a>
-                    </li>
-                    <li>
-                        <!-- add correct filename to href below                   -->
-                        <a href="shoppinglist.html" class="active">
-                            <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
-                            <span class="item">Shopping List</span>
-                        </a>
-                    </li>
-        
-                    <li>
-                        <!-- add correct filename to href below                   -->
-                        <a href="inventory.html" class="active">
-                            <span class="icon"><i class="fa-solid fa-utensils"></i></span>
-                            <span class="item">Inventory</span>
-                        </a>
-                    </li>
-        
-                </ul>
+            
+            <div class="tab">
+                <button class="tablinks" > <a href="home.html" > Home </a></button>
+                <button class="tablinks" > <a href="recipes.html" > Search Recipes </a></button>
+                <button class="tablinks" > <a href="shoppingList.html" > Shopping List </a></button>
+                <button class="tablinks" > <a href="inventory.html" > Inventory </a></button>
             </div>
+
             <div class="section">
                 <div class="top_navbar">
-                    <div class="menuButton">
-                        <a href="#">
-                            <i class="fas fa-bars"></i>
-                        </a>
-                    </div>
+
                     <!--Put title of page here!-->
                     <div class="title">
                         Shopping List
@@ -62,6 +36,8 @@
                 </div>
             </div>
         </div>
+
+        <div class="padded-page">
         
         <div class="levelSelection">
             <!--        create js function to show recipe based on level-->
@@ -91,7 +67,7 @@
                 <option value="Walmart">Walmart</option>
                 
             </select> 
-            <input type="button" value="add" id="addButton" onClick="addToList()" name="add"/>
+            <input type="button" value="Add" id="addButton" onClick="addToList()" name="add"/>
         </form> <br>
 
         Trader Joe's
@@ -111,6 +87,6 @@
                         <input type="checkbox" name="food" value="Banana"> <label for="food" class="strikethrough"> 2 Almond Milk</label><br>
 
                 </div>
-
+            </div>
     </body>
 </html>
