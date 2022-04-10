@@ -363,3 +363,11 @@
   .empty-list{
     padding: 25px;
   }
+
+  .keyboards{
+     position:absolute;
+     bottom:7px;
+     display:none;
+     border-radius: 8px;
+
+  }

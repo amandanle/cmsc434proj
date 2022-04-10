@@ -57,8 +57,8 @@
 
                 <p id="newItemLabel">Add a New Item:</p>
         <form id="adding">
-            <input type="text" name="itemName" id="itemName" value="Item Name"/> 
-            <input type="text" name="itemAmount" id="itemAmount" value="Item Amount"/> 
+            <input type="text" name="itemName" id="itemName" value="Item Name" onClick="displayKeyboard();" onblur="removeKeyboard();"/>
+            <input type="text" name="itemAmount" id="itemAmount" value="Item Amount" onClick="displayKeyboard();" onblur="removeKeyboard();"/>
             <select id = "storeSelection">
                 <option value="Other">General Store</option>
                 <option value="Trader Joe's">Trader Joe's</option>
@@ -87,6 +87,8 @@
                         <input type="checkbox" name="food" value="Banana"> <label for="food" class="strikethrough"> 2 Almond Milk</label><br>
 
                 </div>
+            <img  src="keyboard.jpeg" class="keyboards" id="keyboard">
+            </div>
             </div>
             
             <button type="button">Edit items</button>
