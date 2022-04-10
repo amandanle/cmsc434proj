@@ -12,17 +12,20 @@ let level = new String();
 
 let pinned = new Array();
 
-//let recipesJson = '[{ "name": "Cereal", "info": ["easy", "vegetarian", "gluten-free"], "ingredients":[{"quantity": "2 cups","name": " cereal"},{"quantity": "2 cups","name": "milk"} ],"steps": ["Put cereal of choosing into bowl.","pour milk in bowl and enjoy."],"imageURL": "cereal.jpeg"},{ "name": "Cereal","ingredients": [{"quantity": "1","name": " beef roast", "type": "Meat"}]} ]';
-//for the json data to be read in 
 
+
+let recipesJson =' [{"name":"Cereal","info":[" easy ","| nut-free ","| gluten-free ","| vegetarian ","| vegan |"],"ingredients":[{"quantity":"1 cup","name":"Cereal"},{"quantity":"2 cups ","name":"Milk"}],"steps":["Put cereal of choosing into bowl","Pour milk in and enjoy"],"imageURL":"recipeImages/cereal.jpeg"},{"name":"Banana Bread","info":["easy"," | vegetarian | ","vegan"],"ingredients":[{"quantity":"2","name":"Bananas"},{"quantity":"1/3 cup","name":"butter"},{"quantity":"1/2 teaspoon","name":"Baking Soda"},{"quantity":"3/4 cup","name":"Sugar"},{"quantity":"1 pinch","name":"Salt"},{"quantity":"1","name":"Egg"},{"quantity":"1 teaspoon","name":"Vanilla Extract"},{"quantity":"1 1/2 cups","name":"All purpose flour"}],"steps":["Preheat oven to 350 degrees","Butter a loaf pan","In a mixing bowl, mash bananas with a fork until smooth","Stir butter into mashed bananas","Mix dry ingredients together and then stir in wet ingredients","Pour batter into pan and bake for 50 minutes. Let cool before serving"],"imageURL":"recipeImages/bananabread.webp"}]';
+
+//for the json data to be read in 
+var data;
  let recipes;
- fetch("./recipe.json").then(
-         function(u){ return u.json();}
-       ).then(
-         function(json){
-           recipes = json;
-         }
-       )
+// fetch("./recipe.json").then(
+//         function(u){ return u.json();}
+//       ).then(
+//         function(json){
+//           recipes = json;
+//         }
+//       )
 
 function main(){
 
@@ -32,6 +35,7 @@ function main(){
 
     // for the recipe form
     document.getElementById("processRecipeButton").onclick = processRecipeData;
+
 
 }
 
@@ -59,10 +63,15 @@ function processRecipeData(){
 
 }
 
+//showRecipe.apply(this, recipes);
 //function to display the recipe taken based on options/levels from json
 function showRecipe(num){
 
-    recipe = recipes[num];
+    //alert(num);
+    data = JSON.parse(recipesJson);
+    //console.log(recipes);
+    recipe = data[num];
+
 
     //display found recipe
     var divName =  document.getElementById("recipeName");
