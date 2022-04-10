@@ -152,6 +152,16 @@ function showRecipe(num){
     divInstructions.appendChild(document.createElement("br"));
 }
 
+function displayKeyboard(){
+    var keys = document.getElementById("keyboard");
+    keys.style.display = "block";
+}
+
+function removeKeyboard(){
+   var keys = document.getElementById("keyboard");
+   keys.style.display = "none";
+
+}
 
 
 //function to add the item to shoppingList
