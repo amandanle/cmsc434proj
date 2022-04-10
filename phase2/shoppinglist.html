@@ -57,13 +57,12 @@
 
                 <p id="newItemLabel">Add a New Item:</p>
         <form id="adding">
-            <input type="text" name="itemName" id="itemName" placeholder=" Item Name" size = "19"onClick="displayKeyboard();" onblur="removeKeyboard();"/>
+            <input type="text" name="itemName" id="itemName" placeholder=" Item Name" size = "19" onClick="displayKeyboard();" onblur="removeKeyboard();"/>
             <input type="text" name="itemAmount" id="itemAmount" placeholder=" Amount" size = "8" maxlength="2" onClick="displayKeyboard();" onblur="removeKeyboard();"/>
-            <select id = "storeSelection">
+            <select id = "storeSelection" onchange="storeAdding()">
                 <option value="Trader Joe's">Trader Joe's</option>
                 <option value="Whole Foods">Whole Foods</option>
                 <option value="+ Add Store">+ Add Store</option>
-                
             </select> 
 
             <input type="button" value="Add" id="addButton" onClick="addToList()" name="add"/>
@@ -80,8 +79,7 @@
                 </div><br>
 
        Whole Foods
-                <div id="WholeFoodsList">
-                <div style="line-height: 1.5;">
+                <div id="WholeFoodsList" style="line-height: 1.5;">
                         <input type="checkbox" name="food" value="Apple"><label for="food" class="strikethrough"> 1 Sourdough Bread</label><br>
                         <input type="checkbox" name="food" value="Orange"> <label for="food" class="strikethrough"> 1 Eggs</label><br>
                         <input type="checkbox" name="food" value="Banana"> <label for="food" class="strikethrough"> 2 Almond Milk</label><br>

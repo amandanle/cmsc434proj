@@ -231,3 +231,11 @@ function addToList(item) {
         
         //divTraderJoesList.appendChild(document.createElement("br"));
 }
+function storeAdding(){
+    //alert("hi");
+    var store = document.getElementById("storeSelection");
+    var storeval = store.options[store.selectedIndex].value;
+    if(storeval == "+ Add Store"){
+        window.location.replace("comingsoon.html");
+    }
+}
