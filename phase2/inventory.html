@@ -52,7 +52,7 @@
       <label for="food-input">Item Name: </label>
     </td>
     <td> 
-      <input type="text" id="food-input" placeholder="Enter a food item">
+      <input type="text" id="food-input" placeholder="Enter a food item" onClick="displayKeyboard();" onblur="removeKeyboard();">
     </td>
   </tr>
 
@@ -79,7 +79,7 @@
         <label for="quantity">Quantity: </label>
       </td>
       <td> 
-        <input type="text" id="quantity" placeholder="Enter a quantity">
+        <input type="text" id="quantity" placeholder="Enter a quantity" onClick="displayKeyboard();" onblur="removeKeyboard();">
       </td>
     </tr>
 
@@ -87,7 +87,7 @@
       <label for="expiration">Best By:</label>
     </td>
     <td> 
-      <input type="date" id="expir-date" name="expir-date">
+      <input type="date" id="expir-date" name="expir-date" onClick="displayKeyboard();" onblur="removeKeyboard();">
     </td>
   </tr>
 
@@ -99,7 +99,7 @@
 </div>
 
 
-
+<img  src="keyboard.jpeg" class="keyboards" id="keyboard">
 
 
 
@@ -292,7 +292,16 @@ function addItem(){
     }
   }
 
+function displayKeyboard(){
+    var keys = document.getElementById("keyboard");
+    keys.style.display = "block";
+}
 
+function removeKeyboard(){
+   var keys = document.getElementById("keyboard");
+   keys.style.display = "none";
+
+}
 
 </script>
 </head>
