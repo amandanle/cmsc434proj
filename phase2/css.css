@@ -368,6 +368,11 @@
     padding: 25px;
   }
 
+  .addBtn{
+    padding: 25px;
+  }
+  
+
   .keyboards{
      position:absolute;
      bottom:7px;

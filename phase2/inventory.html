@@ -92,8 +92,8 @@
   </tr>
 
   <tr> 
-    <td> <span onclick="closeAdd()" class="closeBtn">Close</span> </td>
-    <td> <span onclick="newItemInfo()" class="finishBtn">Add</span></td>
+    <td> <button onclick="closeAdd()" class="closeBtn">Close </button></td>
+    <td> <button onclick="newItemInfo()" class="finishBtn">Add </button></td>
   </tr>
   </table>
 </div>
@@ -132,17 +132,38 @@
             <td><span id='expiration'> </span> </td> 
           </tr> 
           <tr> 
-            <td padding = "50px"> <button onClick="location.href = 'comingsoon.html';">Edit</span></td>
-            <td padding = "50px"> <button onclick="closeInfo()" class="closeBtn">Close</span> </td>
+            <td padding = "50px"> <button onClick="location.href = 'comingsoon.html';">Edit</button></td>
+            <td padding = "50px"> <button onclick="closeInfo()" class="closeBtn">Close</button> </td>
           </tr>
         </table>
+        </div>
+
+        <div class = "hide" id="missingAlert">
+          <table>
+            <tr>
+              <td>
+                You must have a food name and quantity!
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button onClick="closeAlert()" class = "closeBtn"> Close</button>
+              </td>
+            </tr>
+          </table>
         </div>
 
 
 <!-- FUNCTIONS  -->
 <script type="text/javascript">
 
+function closeAlert(){
+  var x = document.getElementById("missingAlert");
+  x.style.display = "none";
 
+  var y = document.getElementById("addItem");
+  y.style.display = "block";
+}
 
 function closeInfo(){
           var x = document.getElementById("itemInfo");
@@ -265,8 +286,9 @@ function addItem(){
     var t = document.createTextNode(itemLookup);
     li.appendChild(t);
     if (itemLookup == "" || quantity == "") {
-    alert("You must have a food item and quantity!");
-    x.style.display = "block";
+    var alert = document.getElementById("missingAlert");
+    alert.style.display="block";
+    x.style.display = "none";
     document.getElementById("food-input").value = "";
     document.getElementById("quantity").value = "";
     } else {
