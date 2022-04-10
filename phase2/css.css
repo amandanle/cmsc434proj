@@ -318,11 +318,6 @@
     display:none;
   }
 
-  
-  .addBtn {
-    color: green;
-  }
-
   ol li {
     cursor: pointer;
     position: relative;
