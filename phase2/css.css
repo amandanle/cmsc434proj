@@ -144,7 +144,7 @@
     .page-container{
         background-color:#457B9D;
         background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
-        height: 650px;
+        height: 725px;
     }
 
     .bg {
@@ -359,9 +359,20 @@
     position:absolute;
   }
 
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-top: 150px;
+  }
+
   .stay{
     margin: auto;
-    position:absolute;
+    position:relative;
+    
   }
 
   .empty-list{

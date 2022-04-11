@@ -80,7 +80,7 @@ function showRecipe(num){
     divName.appendChild(heading);
 
     var saveButton = document.createElement("button");
-    saveButton.innerHTML = '<h6>save to pinned</h6>';
+    saveButton.innerHTML = '<h5>Save to Pinned</h5>';
     saveButton.addEventListener("click",  function() {addToPinned(recipe.name)});
     divName.appendChild(saveButton);
 
@@ -120,7 +120,7 @@ function showRecipe(num){
         list.appendChild(span);
       })
       var button = document.createElement("button");
-      button.innerHTML = '<h6>add to shopping list</h6>';
+      button.innerHTML = '<h5>Add to Shopping List</h5>';
       button.addEventListener("click",  function() {addToShoppingList(ing)});
       button.style.position = "absolute";
       button.style.left = "50%";
