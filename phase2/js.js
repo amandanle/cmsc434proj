@@ -58,6 +58,7 @@ function processRecipeData(){
     document.getElementById("levelSelection").style.display = "none";
      document.getElementById("allergyForm").style.display = "none";
      document.getElementById("levelQuestion").style.display = "none";
+     document.getElementById("processRecipeButton").style.display = "none";
    // document.getElementById("allergenForm").style.display = "none";
     showRecipe(0);
 
@@ -233,4 +234,10 @@ function storeAdding(){
     if(storeval == "+ Add Store"){
         window.location.replace("comingsoon.html");
     }
+}
+
+function listAlert(){
+
+    document.getElementById("storeAlert").style.display = "block";
+
 }

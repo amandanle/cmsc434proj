@@ -39,19 +39,23 @@
 
         <div class="padded-page">
         
-        <div class="levelSelection">
-            <!--        create js function to show recipe based on level-->
-            <!-- <select onclick="showRecipe();" class = "select" onchange="showRecipe();" name="levels" id="levelSelection">
-                <option value="easy" selected="true">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select> -->
+<!--        <div class="levelSelection">-->
+<!--            &lt;!&ndash;        create js function to show recipe based on level&ndash;&gt;-->
+<!--            &lt;!&ndash; <select onclick="showRecipe();" class = "select" onchange="showRecipe();" name="levels" id="levelSelection">-->
+<!--                <option value="easy" selected="true">Easy</option>-->
+<!--                <option value="medium">Medium</option>-->
+<!--                <option value="hard">Hard</option>-->
+<!--            </select> &ndash;&gt;-->
 
 
 
-            <!-- <button type="button" onclick=test()>Add New</button> -->
-        </div>
+<!--            &lt;!&ndash; <button type="button" onclick=test()>Add New</button> &ndash;&gt;-->
+<!--        </div>-->
 
+            <div class="alert" style="display: none; font-size:35px;" id="storeAlert">
+                <span class="closebtn"  onclick="this.parentElement.style.display='none';">&times;</span>
+                Added checked items to inventory!
+            </div>
         <div class="addingitem">
                 
 
@@ -85,10 +89,13 @@
                         <input type="checkbox" name="food" value="Banana"> <label for="food" class="strikethrough"> 2 Almond Milk</label><br>
 
                 </div>
+            
+            <div>
+            <br><button onClick="location.href = 'comingsoon.html';">Edit Items</button>
+                <button class = "myButton" onClick="listAlert();" style="position: relative; left: 300px;"> Add to Inventory</button>
+            </div>
             <img  src="keyboard.jpeg" class="keyboards" id="keyboard">
-            </div>
-            <br><button onClick="location.href = 'comingsoon.html';">Edit Items</span>
-            </div>
+
 
              
     </body>
