@@ -179,7 +179,7 @@ function closeInfo(){
 
         var list = document.querySelector('ol');
         list.addEventListener('click', function(ev) {
-        if (ev.target.tagName === 'LI') {
+        if (ev.target.tagName == 'LI') {
           var x = document.getElementById("addBtn");
           x.style.display = "none";
 
@@ -191,12 +191,7 @@ function closeInfo(){
           document.getElementById('item-name').innerText = itemName;
           document.getElementById('purchased-date2').innerText = Info[0];
           document.getElementById('amount').innerText = Info[1];
-          if (Info[2] != "") {
-          var year = Info[2].split("-")[0];
-          var month = Info[2].split("-")[1];
-          var day = Info[2].split("-")[2];
-          document.getElementById('expiration').innerText = month + "-" + day + "-" + year;
-          }
+          document.getElementById('expiration').innerText = Info[2];
           
           document.getElementById('itemInfo').style.display="block";
         }
@@ -293,6 +288,7 @@ function addItem(){
     x.style.display = "none";
     document.getElementById("food-input").value = "";
     document.getElementById("quantity").value = "";
+    document.getElementById("expir-date").value = "";
     } else {
       var hide = document.getElementById("foodItems");
       hide.style.display = "block";
@@ -300,6 +296,7 @@ function addItem(){
       document.getElementById('addBtn').style.display="block";
       document.getElementById("food-input").value = "";
       document.getElementById("quantity").value = "";
+      document.getElementById("expir-date").value = "";
     }
 
     var span = document.createElement("SPAN");
