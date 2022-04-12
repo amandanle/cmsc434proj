@@ -393,3 +393,11 @@
      border-radius: 8px;
 
   }
+
+  .numpad{
+    position:absolute;
+    bottom:7px;
+    display:none;
+    border-radius: 8px;
+
+ }
