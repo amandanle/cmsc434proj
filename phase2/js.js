@@ -234,3 +234,9 @@ function storeAdding(){
         window.location.replace("comingsoon.html");
     }
 }
+
+function listAlert(){
+
+    document.getElementById("storeAlert").style.display = "block";
+
+}
