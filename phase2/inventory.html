@@ -37,11 +37,12 @@
 <!-- inventory stuff -->
 <!-- referenced from https://www.w3schools.com/howto/howto_js_todolist.asp -->
 
-
-
-<div class = "empty-list" id = "empty-list">
+<div class = "hide">
+  <div class = "empty-list" id = "empty-list">
     Your Inventory is Empty, click the Add Item button to add an item to your inventory. Click on an item after adding to check its information!
-</div>
+  </div>
+ </div>
+
 
 
 
@@ -68,7 +69,7 @@
         var y = n.getFullYear();
         var m = n.getMonth() + 1;
         var d = n.getDate();
-        document.getElementById("purchased-date").innerHTML = m + "-" + d + "-" + y;
+        document.getElementById("purchased-date").innerHTML = y + "-" + m + "-" + d;
         </script>
     </label>
     </td>
@@ -104,8 +105,9 @@
 
 
 <ol id="foodItems">
-
+  <li>Loaf of bread</li>
 </ol>
+
 
 <div class = "stay">
   <div class="center">
@@ -159,6 +161,10 @@
 
 <!-- FUNCTIONS  -->
 <script type="text/javascript">
+
+
+
+
 
 function closeAlert(){
   var x = document.getElementById("missingAlert");
@@ -214,6 +220,8 @@ function closeInfo(){
 
 
   const foodItems = new Map();
+  var breadItems = ["2022-03-28","1","2022-04-05"];
+  foodItems.set("Loaf of bread", breadItems);
     // Create a "close" button and append it to each list item
     var myNodelist = document.getElementById("foodItems").getElementsByTagName("li");
     var i;
