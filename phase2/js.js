@@ -67,6 +67,18 @@ function processRecipeData(){
      document.getElementById("mealSelection").style.display = "none";
      document.getElementById("skip").style.display = "none";
      document.getElementById("surpriseButton").style.display = "none";
+     document.getElementById("search").style.display = "none";
+     document.getElementById("findButton").style.display = "none";
+     document.getElementById("br1").style.display = "none";
+     document.getElementById("br2").style.display = "none";
+     document.getElementById("br").style.display = "none";
+     document.getElementById("search").style.display = "none";
+      document.getElementById("searchBar").style.display = "none";
+      document.getElementById("suggested").style.display = "none";
+//      document.getElementById("br2").style.display = "none";
+//      document.getElementById("br").style.display = "none";
+
+
 
    // document.getElementById("allergenForm").style.display = "none";
     showRecipe(0);
