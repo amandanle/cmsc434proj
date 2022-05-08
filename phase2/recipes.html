@@ -41,6 +41,10 @@
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     Saved recipe!
 </div>
+<center>
+    <button id="surpriseButton" onclick=" processRecipeData();">Skip the form and surprise me!</button>
+</center>
+
 
 <div class="levelSelection" style="line-height: 1.5; text-align:center;">
     <p id="levelQuestion">Whats your level of cooking? </p>
@@ -69,7 +73,49 @@
                 <!--radio buttons or select?? -->
             </div>
 
-    </form>
+        </form>
+        <div class="mealSelection" style="line-height: 1.5; text-align:center;">
+            <p id="mealQuestion">What meal? </p>
+            <!--        create js function to show recipe based on level-->
+            <center>
+                <select  class = "select"  name="levels"  style="width:300px; text-align:center; appearance: none; background: url(dropdownarrow.png) white no-repeat 96%;">
+                    <option value="easy" selected="true">Breakfast</option>
+                    <option value="medium">Lunch</option>
+                    <option value="hard">Dinner</option>
+                </select>
+            </center>
+        </div>
+
+        <form id="foodForm">
+            <legend>What types of food?</legend>
+
+            <div>
+                <select id="types" multiple required size=5 style="width:300px; text-align:center;">
+                    <option value="Nuts">Vegetables</option>
+                    <option value="GlutenFree">Meat</option>
+                    <option value="Vegetarian">Seafood </option>
+                    <option value="Vegan">Grains</option>
+                    <option value="None">Surprise me!</option>
+                </select>
+                <!--radio buttons or select?? -->
+            </div>
+
+        </form>
+
+        <div class="mealSelection" style="line-height: 1.5; text-align:center;">
+            <p id="cuisineQuestion">What cuisine? </p>
+            <!--        create js function to show recipe based on level-->
+            <center>
+                <select  class = "select"  name="cuisine"  style="width:300px; text-align:center; appearance: none; background: url(dropdownarrow.png) white no-repeat 96%;">
+                    <option value="easy" selected="true">Asian</option>
+                    <option value="medium">French</option>
+                    <option value="hard1">German</option>
+                    <option value="hard2">Mediterranean</option>
+                    <option value="hard3">Surprise me!</option>
+                </select>
+            </center>
+        </div>
+
         <button id="processRecipeButton" onclick=" processRecipeData();">Give Me a Recipe!</button>
     </center>
 </div>
