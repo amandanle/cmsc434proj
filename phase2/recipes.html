@@ -42,7 +42,8 @@
     Saved recipe!
 </div>
 <center>
-    <button id="surpriseButton" onclick=" processRecipeData();">Skip the form and surprise me!</button>
+    <p id="skip">Tap here to skip the form: </p>
+    <button id="surpriseButton" onclick=" processRecipeData();">surprise me!</button>
 </center>
 
 
@@ -78,7 +79,7 @@
             <p id="mealQuestion">What meal? </p>
             <!--        create js function to show recipe based on level-->
             <center>
-                <select  class = "select"  name="levels"  style="width:300px; text-align:center; appearance: none; background: url(dropdownarrow.png) white no-repeat 96%;">
+                <select  class = "select"  name="levels" id="mealSelection"  style="width:300px; text-align:center; appearance: none; background: url(dropdownarrow.png) white no-repeat 96%;">
                     <option value="easy" selected="true">Breakfast</option>
                     <option value="medium">Lunch</option>
                     <option value="hard">Dinner</option>
@@ -106,7 +107,7 @@
             <p id="cuisineQuestion">What cuisine? </p>
             <!--        create js function to show recipe based on level-->
             <center>
-                <select  class = "select"  name="cuisine"  style="width:300px; text-align:center; appearance: none; background: url(dropdownarrow.png) white no-repeat 96%;">
+                <select  class = "select"  name="cuisine" id="cuisineSelection" style="width:300px; text-align:center; appearance: none; background: url(dropdownarrow.png) white no-repeat 96%;">
                     <option value="easy" selected="true">Asian</option>
                     <option value="medium">French</option>
                     <option value="hard1">German</option>
