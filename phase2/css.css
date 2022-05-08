@@ -306,6 +306,7 @@
 
   .tablinks {
     font-size: 4vw;
+    color: #f1faee;
 
   }
 
@@ -400,4 +401,20 @@
     display:none;
     border-radius: 8px;
 
+ }
+
+ .tabcolors:link {
+   color: #457B9D;
+ }
+
+ .tabcolors:visited {
+   color: #457B9D;
+ }
+
+ .tabcolors:hover {
+   color: #457B9D;
+ }
+
+ .tabcolors:active {
+   color: #457B9D;
  }
