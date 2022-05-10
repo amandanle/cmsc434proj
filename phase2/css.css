@@ -221,6 +221,8 @@
         display: block;
         font-size: 14px;
         line-height: 14px;
+
+        
       }
 
     .button:hover {
@@ -237,6 +239,8 @@
         margin: 15px;
         display: inline-block;
     }
+
+  
 
     .action-container {
         float: auto;
@@ -418,3 +422,5 @@
  .tabcolors:active {
    color: #457B9D;
  }
+
+
